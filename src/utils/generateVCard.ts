@@ -25,43 +25,43 @@ export function generateVCard(): string {
 export async function addToContacts(): Promise<void> {
   const vcfContent = generateVCard();
   
-  // Create blob with vCard MIME type
   const blob = new Blob([vcfContent], { type: "text/vcard;charset=utf-8" });
   const file = new File([blob], "Salvatore-Musella.vcf", { 
     type: "text/vcard;charset=utf-8" 
   });
 
-  // 1. Try native share API (works well on Android and some iOS versions)
+  // 1. Try Web Share API (works on Android Chrome)
   try {
-    if (navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share) {
-      await navigator.share({ 
-        files: [file], 
-        title: "Salvatore Musella Contact" 
-      });
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ files: [file], title: "Salvatore Musella" });
       return;
     }
   } catch (err) {
-    // User cancelled share
-    if ((err as Error).name === "AbortError") {
-      return;
-    }
+    if ((err as Error).name === "AbortError") return;
     // Share failed, continue to fallback
-    console.log("Share API not available, using download fallback");
   }
 
-  // 2. Fallback: Direct download with <a> element
-  // This works reliably on iOS Safari and triggers "Open in Contacts" prompt
+  // 2. iOS/Safari: Use Data URL redirect
+  // This triggers the native "Add to Contacts" UI
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  
+  if (isIOS || isSafari) {
+    const base64 = btoa(unescape(encodeURIComponent(vcfContent)));
+    window.location.href = `data:text/x-vcard;base64,${base64}`;
+    return;
+  }
+
+  // 3. Fallback: Open blob URL without download attribute
+  // Let the browser/OS handle the file natively
   const blobUrl = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = blobUrl;
-  link.download = "Salvatore-Musella.vcf";
-  
-  // iOS Safari needs the link in DOM
+  // NO download attribute - allows OS to open native handler
   link.style.display = "none";
   document.body.appendChild(link);
   link.click();
   
-  // Cleanup
   setTimeout(() => {
     document.body.removeChild(link);
     URL.revokeObjectURL(blobUrl);
