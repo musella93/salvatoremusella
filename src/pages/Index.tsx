@@ -132,7 +132,7 @@ const Index = () => {
             rel="noopener noreferrer"
             className="inline-block text-xs text-muted-foreground hover:text-foreground/80 transition-colors"
           >
-            PMP® Certified
+            PMP® Certified Project Manager
           </a>
         </motion.section>
 
