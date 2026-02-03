@@ -111,12 +111,19 @@ const Index = () => {
 
         {/* Education & Certification */}
         <motion.section
-          className="text-center space-y-1 -mt-2"
+          className="text-center space-y-3 -mt-2"
           variants={fadeInUp}
         >
-          <p className="text-sm text-foreground/75">
-            Università Bocconi • Politecnico di Milano • LUISS
-          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {["Università Bocconi", "Politecnico di Milano", "LUISS"].map((institution) => (
+              <span
+                key={institution}
+                className="px-3 py-1.5 text-xs text-foreground/70 rounded-full border border-white/10 bg-white/5 cursor-default"
+              >
+                {institution}
+              </span>
+            ))}
+          </div>
           <a
             href="https://salvatoremusella.com/credly"
             target="_blank"
