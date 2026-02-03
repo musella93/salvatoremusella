@@ -64,7 +64,7 @@ const Index = () => {
         </motion.header>
 
         {/* Action Stack - CTA Buttons */}
-        <motion.nav className="w-full max-w-[480px] mx-auto space-y-3" variants={fadeInUp} aria-label="Primary actions">
+        <motion.nav className="w-full max-w-[380px] mx-auto space-y-3" variants={fadeInUp} aria-label="Primary actions">
           {/* Primary CTA - Resume */}
           <a
             href="https://salvatoremusella.com/cv"
