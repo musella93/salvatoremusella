@@ -148,14 +148,16 @@
   }
 
   .cta-tertiary {
-    @apply flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full 
-           transition-all duration-200
+    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
+           border transition-all duration-200
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     background: transparent;
+    border-color: hsl(var(--glass-border) / 0.08);
   }
 
   .cta-tertiary:hover {
     background: hsl(var(--glass-bg) / 0.05);
+    border-color: hsl(var(--glass-border) / 0.12);
   }
 
   /* Badge styles */
