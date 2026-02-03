@@ -1,96 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Premium Dark Glassmorphism Design System
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 47% 7%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 47% 7%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 226 70% 55%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 226 70% 55%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 226 70% 55%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom glassmorphism tokens */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 0 0% 100%;
+    --text-secondary: 215 16% 57%;
+    --text-tertiary: 215 16% 47%;
+    --glow-primary: 226 70% 55%;
   }
 
+  /* Dark mode is default for this project */
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 222 47% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 7%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 7%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 226 70% 55%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 215 25% 15%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 226 70% 55%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 226 70% 55%;
+
+    --glass-bg: 0 0% 100%;
+    --glass-border: 0 0% 100%;
+    --text-secondary: 215 16% 57%;
+    --text-tertiary: 215 16% 47%;
+    --glow-primary: 226 70% 55%;
   }
 }
 
@@ -99,7 +91,83 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background: linear-gradient(180deg, 
+      hsl(222 47% 5%) 0%, 
+      hsl(240 6% 10%) 50%,
+      hsl(222 47% 5%) 100%
+    );
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  /* Glass panel utilities */
+  .glass-panel {
+    @apply backdrop-blur-xl border rounded-2xl;
+    background: hsl(var(--glass-bg) / 0.05);
+    border-color: hsl(var(--glass-border) / 0.1);
+  }
+
+  .glass-panel-strong {
+    @apply backdrop-blur-xl border rounded-2xl;
+    background: hsl(var(--glass-bg) / 0.1);
+    border-color: hsl(var(--glass-border) / 0.15);
+  }
+
+  /* CTA button styles */
+  .cta-primary {
+    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
+           backdrop-blur-xl border transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    background: hsl(var(--glass-bg) / 0.1);
+    border-color: hsl(var(--glass-border) / 0.2);
+  }
+
+  .cta-primary:hover {
+    background: hsl(var(--glass-bg) / 0.15);
+    border-color: hsl(var(--glass-border) / 0.25);
+  }
+
+  .cta-secondary {
+    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
+           border transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    background: transparent;
+    border-color: hsl(var(--glass-border) / 0.1);
+  }
+
+  .cta-secondary:hover {
+    background: hsl(var(--glass-bg) / 0.05);
+    border-color: hsl(var(--glass-border) / 0.15);
+  }
+
+  .cta-tertiary {
+    @apply flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full 
+           transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    background: transparent;
+  }
+
+  .cta-tertiary:hover {
+    background: hsl(var(--glass-bg) / 0.05);
+  }
+
+  /* Badge styles */
+  .badge-credential {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium border;
+    background: hsl(var(--glass-bg) / 0.05);
+    border-color: hsl(var(--glass-border) / 0.15);
+    color: hsl(var(--text-secondary));
+  }
+
+  /* Subtle glow effect */
+  .glow-subtle {
+    box-shadow: 0 0 60px -15px hsl(var(--glow-primary) / 0.15);
   }
 }
