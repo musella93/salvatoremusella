@@ -258,13 +258,13 @@
 
   .cta-tertiary {
     @apply border;
-    background: hsl(var(--glass-bg) / 0.03);
-    border-color: hsl(var(--glass-border) / 0.08);
+    background: hsl(var(--glass-bg) / 0.04);
+    border-color: hsl(var(--glass-border) / 0.10);
   }
 
   .cta-tertiary:hover {
-    background: hsl(var(--glass-bg) / 0.05);
-    border-color: hsl(var(--glass-border) / 0.14);
+    background: hsl(var(--glass-bg) / 0.07);
+    border-color: hsl(var(--glass-border) / 0.18);
     transform: translateY(-1px);
   }
 
