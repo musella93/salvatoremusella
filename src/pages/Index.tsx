@@ -1,10 +1,8 @@
-import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, Download } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { profile } from "@/data/profile";
-import BusinessCard from "@/components/BusinessCard";
-import { saveBusinessCard } from "@/utils/saveBusinessCard";
+import { downloadVCard } from "@/utils/generateVCard";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -18,17 +16,9 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
-  const cardRef = useRef<HTMLDivElement>(null);
-  const [isGenerating, setIsGenerating] = useState(false);
 
-  const handleSaveCard = async () => {
-    if (!cardRef.current || isGenerating) return;
-    setIsGenerating(true);
-    try {
-      await saveBusinessCard(cardRef.current);
-    } finally {
-      setIsGenerating(false);
-    }
+  const handleSaveCard = () => {
+    downloadVCard();
   };
 
   const fadeInUp = shouldReduceMotion
@@ -55,21 +45,6 @@ const Index = () => {
       <div className="ambient-bg" aria-hidden="true" />
       <div className="ambient-glow-center" aria-hidden="true" />
       <div className="noise-overlay" aria-hidden="true" />
-
-      {/* Hidden BusinessCard for export */}
-      <div
-        style={{
-          position: "absolute",
-          left: "-9999px",
-          top: "-9999px",
-          pointerEvents: "none",
-        }}
-        aria-hidden="true"
-      >
-        <div ref={cardRef}>
-          <BusinessCard />
-        </div>
-      </div>
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
@@ -237,15 +212,14 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <button
                       onClick={handleSaveCard}
-                      disabled={isGenerating}
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50"
-                      aria-label="Salva Business Card"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      aria-label="Salva Contatto"
                     >
                       <Download className="w-[22px] h-[22px]" />
                     </button>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
-                    <p>Salva Business Card</p>
+                    <p>Salva Contatto</p>
                   </TooltipContent>
                 </Tooltip>
               </div>
