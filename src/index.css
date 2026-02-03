@@ -120,20 +120,24 @@
     border-color: hsl(var(--glass-border) / 0.15);
   }
 
-  /* CTA button styles - centered text with absolute positioned icon */
+  /* CTA button styles - centered icon+text group */
   .cta-primary,
   .cta-secondary,
   .cta-tertiary {
-    @apply relative flex items-center justify-center w-full rounded-full 
+    @apply flex items-center justify-center w-full rounded-full 
            transition-all duration-200
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     min-height: 52px;
-    padding: 0 3rem;
+    padding: 0 1.5rem;
+  }
+
+  .cta-content {
+    @apply flex items-center justify-center gap-2.5;
   }
 
   .cta-icon {
-    @apply absolute left-5 w-[18px] h-[18px];
-    color: hsl(var(--foreground) / 0.5);
+    @apply w-[18px] h-[18px] flex-shrink-0;
+    color: hsl(var(--foreground) / 0.6);
   }
 
   .cta-primary {
