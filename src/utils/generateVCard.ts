@@ -20,33 +20,11 @@ export function generateVCard(): string {
   return lines.join("\r\n");
 }
 
-export async function downloadVCard(): Promise<void> {
+export function downloadVCard(): void {
   const vcfContent = generateVCard();
-  
-  // Create File object (required for navigator.share)
-  const file = new File([vcfContent], "Salvatore-Musella.vcf", {
-    type: "text/vcard"
-  });
-  
-  // Try Web Share API (works well on Android and iOS)
-  if (navigator.canShare && navigator.canShare({ files: [file] })) {
-    try {
-      await navigator.share({
-        files: [file],
-        title: "Salvatore Musella - Contatto"
-      });
-      return; // Share successful
-    } catch (error) {
-      // User cancelled or error: fallback to download
-      if ((error as Error).name === 'AbortError') {
-        return; // User cancelled, do nothing
-      }
-    }
-  }
-  
-  // Fallback: traditional download
   const blob = new Blob([vcfContent], { type: "text/vcard;charset=utf-8" });
   const url = URL.createObjectURL(blob);
+  
   const link = document.createElement("a");
   link.href = url;
   link.download = "Salvatore-Musella.vcf";

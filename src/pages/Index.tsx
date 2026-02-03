@@ -17,8 +17,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
 
-  const handleSaveCard = async () => {
-    await downloadVCard();
+  const handleSaveCard = () => {
+    downloadVCard();
   };
 
   const fadeInUp = shouldReduceMotion
