@@ -43,7 +43,7 @@ const Index = () => {
             {/* Avatar */}
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-32 h-32 md:w-36 md:h-36 rounded-full ring-1 ring-white/15 overflow-hidden">
+                <div className="w-[130px] h-[130px] rounded-full ring-1 ring-white/15 overflow-hidden">
                   <img 
                     src={avatarImg} 
                     alt="Salvatore Musella - Digital Product Manager"
@@ -51,7 +51,7 @@ const Index = () => {
                   />
                 </div>
                 {/* Soft glow behind avatar */}
-                <div className="absolute inset-0 -z-10 w-32 h-32 md:w-36 md:h-36 rounded-full avatar-glow" />
+                <div className="absolute inset-0 -z-10 w-[130px] h-[130px] rounded-full avatar-glow" />
               </div>
             </div>
 
@@ -63,6 +63,9 @@ const Index = () => {
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
                 Digital Product Manager
               </h2>
+              <p className="text-sm text-muted-foreground tracking-wide">
+                eCommerce · Mobile Apps · Digital Platforms
+              </p>
             </div>
           </motion.header>
 
@@ -116,11 +119,8 @@ const Index = () => {
             className="text-center space-y-0.5"
             variants={fadeInUp}
           >
-            <p 
-              className="whitespace-nowrap tracking-tight text-foreground/70"
-              style={{ fontSize: 'clamp(10px, 3.2vw, 16px)' }}
-            >
-              Università Bocconi<span className="text-foreground/40">·</span>Politecnico di Milano<span className="text-foreground/40">·</span>LUISS
+            <p className="text-sm text-foreground/70 tracking-wide">
+              Università Bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
             </p>
             <a
               href="https://www.credly.com/badges/78c536ac-737f-4997-8579-d736ea328bc8/public_url"
