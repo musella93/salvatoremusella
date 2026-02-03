@@ -197,55 +197,11 @@
     }
   }
 
-  @keyframes shimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 60px 15px hsl(var(--glow-primary) / 0.15);
-    }
-    50% {
-      box-shadow: 0 0 90px 25px hsl(var(--glow-primary) / 0.25);
-    }
-  }
-
-  @keyframes gradient-rotate {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes icon-glow {
-    0%, 100% {
-      filter: drop-shadow(0 0 0px transparent);
-    }
-    50% {
-      filter: drop-shadow(0 0 6px hsl(var(--glow-primary) / 0.6));
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .ambient-bg::before,
     .ambient-bg::after,
-    .ambient-glow-center,
-    .avatar-glow,
-    .cta-primary::before,
-    .cta-secondary::before,
-    .cta-tertiary::before,
-    .social-icon {
-      animation: none !important;
+    .ambient-glow-center {
+      animation: none;
     }
   }
 
@@ -256,7 +212,7 @@
     border-color: hsl(var(--glass-border) / 0.08);
   }
 
-  /* CTA button styles - minimal glass pills with shimmer */
+  /* CTA button styles - minimal glass pills */
   .cta-primary,
   .cta-secondary,
   .cta-tertiary {
@@ -265,40 +221,10 @@
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     min-height: 52px;
     padding: 0 1.5rem;
-    position: relative;
-    overflow: hidden;
   }
-
-  /* Shimmer effect overlay */
-  .cta-primary::before,
-  .cta-secondary::before,
-  .cta-tertiary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      hsl(var(--glass-bg) / 0.15) 50%,
-      transparent 100%
-    );
-    transform: translateX(-100%);
-    animation: shimmer 4s ease-in-out infinite;
-    animation-delay: var(--shimmer-delay, 0s);
-    pointer-events: none;
-  }
-
-  .cta-primary { --shimmer-delay: 0s; }
-  .cta-secondary { --shimmer-delay: 1.3s; }
-  .cta-tertiary { --shimmer-delay: 2.6s; }
 
   .cta-content {
     @apply flex items-center justify-center gap-2.5;
-    position: relative;
-    z-index: 1;
   }
 
   .cta-icon {
@@ -314,41 +240,8 @@
 
   .cta-primary:hover {
     background: hsl(var(--glass-bg) / 0.20);
-    border-color: transparent;
+    border-color: hsl(var(--glass-border) / 0.35);
     transform: translateY(-1px);
-    box-shadow: 0 8px 32px -8px hsl(var(--glow-primary) / 0.35);
-  }
-
-  /* Gradient border on hover */
-  .cta-primary::after,
-  .cta-secondary::after,
-  .cta-tertiary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--glow-primary) / 0.5) 0%,
-      hsl(var(--glow-secondary) / 0.5) 50%,
-      hsl(var(--glow-primary) / 0.5) 100%
-    );
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .cta-primary:hover::after,
-  .cta-secondary:hover::after,
-  .cta-tertiary:hover::after {
-    opacity: 1;
-    animation: gradient-rotate 3s ease infinite;
   }
 
   .cta-secondary {
@@ -359,9 +252,8 @@
 
   .cta-secondary:hover {
     background: hsl(var(--glass-bg) / 0.07);
-    border-color: transparent;
+    border-color: hsl(var(--glass-border) / 0.18);
     transform: translateY(-1px);
-    box-shadow: 0 8px 28px -8px hsl(var(--glow-primary) / 0.25);
   }
 
   .cta-tertiary {
@@ -372,9 +264,8 @@
 
   .cta-tertiary:hover {
     background: hsl(var(--glass-bg) / 0.08);
-    border-color: transparent;
+    border-color: hsl(var(--glass-border) / 0.22);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px -8px hsl(var(--glow-primary) / 0.2);
   }
 
   .cta-tertiary:focus-visible {
@@ -390,19 +281,8 @@
     color: hsl(var(--text-secondary));
   }
 
-  /* Avatar glow with pulse animation */
+  /* Avatar glow */
   .avatar-glow {
     box-shadow: 0 0 80px 20px hsl(var(--glow-primary) / 0.15);
-    animation: pulse-glow 4s ease-in-out infinite;
-  }
-
-  /* Social icons with hover glow */
-  .social-icon {
-    @apply transition-all duration-300;
-  }
-
-  .social-icon:hover {
-    filter: drop-shadow(0 0 8px hsl(var(--glow-primary) / 0.6));
-    transform: scale(1.1);
   }
 }

@@ -162,7 +162,7 @@ const Index = () => {
                       href={profile.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="WhatsApp"
                     >
                       <WhatsAppIcon className="w-[20px] h-[20px]" />
@@ -178,7 +178,7 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="social-icon w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Email"
                     >
                       <Mail className="w-[22px] h-[22px]" />
@@ -196,7 +196,7 @@ const Index = () => {
                       href={profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="social-icon w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="w-[22px] h-[22px]" />
@@ -212,7 +212,7 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <button
                       onClick={handleSaveCard}
-                      className="social-icon w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Add to Contacts"
                     >
                       <UserPlus className="w-[22px] h-[22px]" />
