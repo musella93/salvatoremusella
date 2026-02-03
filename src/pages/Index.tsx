@@ -64,7 +64,7 @@ const Index = () => {
         </motion.header>
 
         {/* Action Stack - CTA Buttons */}
-        <motion.nav className="space-y-3" variants={fadeInUp} aria-label="Primary actions">
+        <motion.nav className="w-full max-w-[480px] mx-auto space-y-3" variants={fadeInUp} aria-label="Primary actions">
           {/* Primary CTA - Resume */}
           <a
             href="https://salvatoremusella.com/cv"
@@ -106,7 +106,6 @@ const Index = () => {
               <span className="font-medium text-foreground/90">Credly Profile</span>
             </span>
           </a>
-
         </motion.nav>
 
         {/* Education & Certification */}
@@ -129,11 +128,11 @@ const Index = () => {
 
         {/* Micro Footer */}
         <motion.footer
-          className="flex flex-col items-center gap-4 pt-4"
+          className="flex flex-col items-center gap-3 pt-4"
           variants={fadeInUp}
         >
           <TooltipProvider delayDuration={300}>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <Tooltip>
                 <TooltipTrigger asChild>
                   <a
@@ -167,7 +166,7 @@ const Index = () => {
               </Tooltip>
             </div>
           </TooltipProvider>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] text-white/30 tracking-wide">
             © {new Date().getFullYear()} Salvatore Musella
           </p>
         </motion.footer>
