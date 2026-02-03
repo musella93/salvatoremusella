@@ -99,11 +99,14 @@ const Index = () => {
             href="https://salvatoremusella.com/credly"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-tertiary"
+            className="cta-tertiary group"
             data-cta="credly"
           >
-            <Award className="w-5 h-5 text-muted-foreground" />
-            <span className="text-muted-foreground font-medium">Verified Credentials</span>
+            <span className="flex items-center gap-3">
+              <Award className="w-5 h-5 text-muted-foreground" />
+              <span className="text-muted-foreground font-medium">Verified Credentials</span>
+            </span>
+            <ChevronRight className="w-5 h-5 text-foreground/30 group-hover:translate-x-0.5 transition-transform" />
           </a>
 
           {/* Email helper text */}
