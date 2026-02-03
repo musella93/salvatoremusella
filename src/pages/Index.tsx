@@ -33,13 +33,13 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          className="w-full max-w-[440px] glass-card p-8 md:p-10 space-y-8"
+          className="w-full max-w-[440px] glass-card px-8 py-6 md:px-10 md:py-8 space-y-5"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
         >
           {/* Hero Section */}
-          <motion.header className="text-center space-y-5" variants={fadeInUp}>
+          <motion.header className="text-center space-y-4" variants={fadeInUp}>
             {/* Avatar */}
             <div className="flex justify-center">
               <div className="relative">
@@ -70,7 +70,7 @@ const Index = () => {
           </motion.header>
 
           {/* Action Stack - CTA Buttons */}
-          <motion.nav className="w-full max-w-[360px] mx-auto space-y-3" variants={fadeInUp} aria-label="Primary actions">
+          <motion.nav className="w-full max-w-[360px] mx-auto space-y-2.5" variants={fadeInUp} aria-label="Primary actions">
             {/* Primary CTA - Resume */}
             <a
               href="https://salvatoremusella.com/cv"
@@ -109,14 +109,14 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon" />
-                <span className="font-medium text-foreground/85">Credly Profile</span>
+                <span className="font-medium text-foreground/75">Credly Profile</span>
               </span>
             </a>
           </motion.nav>
 
           {/* Education & Certification */}
           <motion.section
-            className="text-center space-y-1.5"
+            className="text-center space-y-1"
             variants={fadeInUp}
           >
             <p className="text-sm text-foreground/70 tracking-wide">
@@ -134,7 +134,7 @@ const Index = () => {
 
           {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-4 pt-2"
+            className="flex flex-col items-center gap-3 pt-1"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
@@ -172,7 +172,7 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <p className="text-[11px] text-white/20 tracking-widest uppercase">
+            <p className="text-[11px] text-white/25 tracking-wide">
               © {new Date().getFullYear()} Salvatore Musella
             </p>
           </motion.footer>
