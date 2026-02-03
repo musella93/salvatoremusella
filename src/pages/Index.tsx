@@ -63,8 +63,8 @@ const Index = () => {
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
                 Digital Product Manager
               </h2>
-              <p className="flex items-center justify-center gap-1.5 text-xs text-foreground/50">
-                <MapPin className="w-3 h-3" />
+              <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 -mt-1">
+                <MapPin className="w-3 h-3 opacity-60" />
                 <span>Lugano, Switzerland</span>
               </p>
             </div>
