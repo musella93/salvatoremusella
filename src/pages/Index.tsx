@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import avatarImg from "@/assets/avatar.jpg";
 
 const Index = () => {
@@ -106,16 +107,6 @@ const Index = () => {
             </span>
           </a>
 
-          {/* Email helper text */}
-          <p className="text-center text-xs text-muted-foreground pt-2">
-            Prefer email?{" "}
-            <a
-              href="mailto:salvatore_musella@outlook.com"
-              className="text-foreground/70 hover:text-foreground underline underline-offset-2 transition-colors"
-            >
-              salvatore_musella@outlook.com
-            </a>
-          </p>
         </motion.nav>
 
         {/* Education & Certification */}
@@ -141,15 +132,41 @@ const Index = () => {
           className="flex flex-col items-center gap-4 pt-4"
           variants={fadeInUp}
         >
-          <a
-            href="https://www.linkedin.com/in/salvatoremusella"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-full hover:bg-white/5"
-            aria-label="LinkedIn Profile"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
+          <TooltipProvider delayDuration={300}>
+            <div className="flex items-center gap-2">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    href="https://www.linkedin.com/in/salvatoremusella"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-11 h-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="hidden md:block">
+                  <p>LinkedIn</p>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <a
+                    href="mailto:salvatore_musella@outlook.com"
+                    className="w-11 h-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    aria-label="Email"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent className="hidden md:block">
+                  <p>Email</p>
+                </TooltipContent>
+              </Tooltip>
+            </div>
+          </TooltipProvider>
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Salvatore Musella
           </p>
