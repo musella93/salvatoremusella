@@ -109,7 +109,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon" />
-                <span className="font-medium text-foreground/80">Credly Profile</span>
+                <span className="font-medium text-white/75">Credly Profile</span>
               </span>
             </a>
           </motion.nav>
@@ -134,7 +134,7 @@ const Index = () => {
 
           {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-2.5"
+            className="flex flex-col items-center gap-2 -mt-1"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
