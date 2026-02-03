@@ -1,8 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, UserPlus } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, Download } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { profile } from "@/data/profile";
-import { addToContacts } from "@/utils/generateVCard";
+import { downloadVCard } from "@/utils/generateVCard";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -17,8 +17,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
 
-  const handleAddToContacts = () => {
-    addToContacts();
+  const handleSaveCard = () => {
+    downloadVCard();
   };
 
   const fadeInUp = shouldReduceMotion
@@ -207,19 +207,19 @@ const Index = () => {
                   </TooltipContent>
                 </Tooltip>
 
-                {/* Add to Contacts */}
+                {/* Save Card */}
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <button
-                      onClick={handleAddToContacts}
+                      onClick={handleSaveCard}
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      aria-label="Add to contacts"
+                      aria-label="Salva Contatto"
                     >
-                      <UserPlus className="w-[22px] h-[22px]" />
+                      <Download className="w-[22px] h-[22px]" />
                     </button>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
-                    <p>Add to contacts</p>
+                    <p>Salva Contatto</p>
                   </TooltipContent>
                 </Tooltip>
               </div>
