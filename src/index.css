@@ -120,11 +120,24 @@
     border-color: hsl(var(--glass-border) / 0.15);
   }
 
-  /* CTA button styles */
-  .cta-primary {
-    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
-           backdrop-blur-xl border transition-all duration-200
+  /* CTA button styles - centered text with absolute positioned icon */
+  .cta-primary,
+  .cta-secondary,
+  .cta-tertiary {
+    @apply relative flex items-center justify-center w-full rounded-full 
+           transition-all duration-200
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    min-height: 52px;
+    padding: 0 3rem;
+  }
+
+  .cta-icon {
+    @apply absolute left-5 w-[18px] h-[18px];
+    color: hsl(var(--foreground) / 0.5);
+  }
+
+  .cta-primary {
+    @apply backdrop-blur-xl border;
     background: hsl(var(--glass-bg) / 0.1);
     border-color: hsl(var(--glass-border) / 0.2);
   }
@@ -135,9 +148,7 @@
   }
 
   .cta-secondary {
-    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
-           border transition-all duration-200
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply border;
     background: transparent;
     border-color: hsl(var(--glass-border) / 0.1);
   }
@@ -148,9 +159,7 @@
   }
 
   .cta-tertiary {
-    @apply flex items-center justify-between w-full px-5 py-4 rounded-full 
-           border transition-all duration-200
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply border;
     background: transparent;
     border-color: hsl(var(--glass-border) / 0.08);
   }
