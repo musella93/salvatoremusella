@@ -103,7 +103,7 @@ const Index = () => {
           >
             <span className="cta-content">
               <Award className="cta-icon" />
-              <span className="font-medium text-foreground/90">Verified Credentials</span>
+              <span className="font-medium text-foreground/90">Credly Profile</span>
             </span>
           </a>
 
