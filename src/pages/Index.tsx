@@ -123,7 +123,7 @@ const Index = () => {
               href="https://www.credly.com/badges/78c536ac-737f-4997-8579-d736ea328bc8/public_url"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xs text-foreground/50 hover:text-foreground/70 transition-colors duration-300"
+              className="inline-block text-[11px] text-foreground/50 hover:text-foreground/70 transition-colors duration-300"
             >
               PMP® Certified Project Manager
             </a>
