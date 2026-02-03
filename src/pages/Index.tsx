@@ -1,5 +1,10 @@
+import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, Download } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { profile } from "@/data/profile";
+import BusinessCard from "@/components/BusinessCard";
+import { saveBusinessCard } from "@/utils/saveBusinessCard";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -10,11 +15,21 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 );
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import avatarImg from "@/assets/avatar.jpg";
 
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handleSaveCard = async () => {
+    if (!cardRef.current || isGenerating) return;
+    setIsGenerating(true);
+    try {
+      await saveBusinessCard(cardRef.current);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
 
   const fadeInUp = shouldReduceMotion
     ? {}
@@ -41,6 +56,21 @@ const Index = () => {
       <div className="ambient-glow-center" aria-hidden="true" />
       <div className="noise-overlay" aria-hidden="true" />
 
+      {/* Hidden BusinessCard for export */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "-9999px",
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      >
+        <div ref={cardRef}>
+          <BusinessCard />
+        </div>
+      </div>
+
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
           className="w-full max-w-[440px] glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
@@ -55,8 +85,8 @@ const Index = () => {
               <div className="relative">
                 <div className="w-[170px] h-[170px] rounded-full ring-1 ring-white/15 overflow-hidden">
                   <img 
-                    src={avatarImg} 
-                    alt="Salvatore Musella - Digital Product Manager"
+                    src={profile.photoUrl} 
+                    alt={`${profile.fullName} - ${profile.title}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -68,14 +98,14 @@ const Index = () => {
             {/* Name & Title - Typography-first */}
             <div className="space-y-2.5">
               <h1 className="text-[1.75rem] md:text-[2rem] font-semibold text-foreground tracking-tight leading-tight">
-                Salvatore Musella
+                {profile.fullName}
               </h1>
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
-                Digital Product Manager
+                {profile.title}
               </h2>
               <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 -mt-1">
                 <MapPin className="w-3 h-3 opacity-60" />
-                <span>Lugano, Switzerland</span>
+                <span>{profile.location}</span>
               </p>
             </div>
           </motion.header>
@@ -154,7 +184,7 @@ const Index = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="https://wa.me/393924499458"
+                      href={profile.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -172,7 +202,7 @@ const Index = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="mailto:salvatore_musella@outlook.com"
+                      href={`mailto:${profile.email}`}
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Email"
                     >
@@ -188,7 +218,7 @@ const Index = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="https://www.linkedin.com/in/salvatoremusella"
+                      href={profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -205,22 +235,14 @@ const Index = () => {
                 {/* Save Card */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <a
-                      href="/business-card.png"
-                      download="Salvatore-Musella-Business-Card.png"
-                      onClick={(e) => {
-                        // iOS detection - Safari doesn't support download attribute well
-                        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                        if (isIOS) {
-                          e.preventDefault();
-                          window.open('/business-card.png', '_blank');
-                        }
-                      }}
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    <button
+                      onClick={handleSaveCard}
+                      disabled={isGenerating}
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:opacity-50"
                       aria-label="Salva Business Card"
                     >
                       <Download className="w-[22px] h-[22px]" />
-                    </a>
+                    </button>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
                     <p>Salva Business Card</p>
@@ -229,7 +251,7 @@ const Index = () => {
               </div>
             </TooltipProvider>
             <p className="text-[11px] text-white/30 tracking-wide">
-              © {new Date().getFullYear()} Salvatore Musella
+              © {new Date().getFullYear()} {profile.fullName}
             </p>
           </motion.footer>
         </motion.div>
