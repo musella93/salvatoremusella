@@ -111,17 +111,17 @@ const Index = () => {
 
         {/* Education & Certification */}
         <motion.section
-          className="text-center space-y-1.5"
+          className="text-center space-y-1 -mt-2"
           variants={fadeInUp}
         >
-          <p className="text-sm text-foreground/70">
+          <p className="text-sm text-foreground/75">
             Università Bocconi • Politecnico di Milano • LUISS
           </p>
           <a
             href="https://salvatoremusella.com/credly"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-xs text-muted-foreground hover:text-foreground/80 transition-colors"
+            className="inline-block text-xs text-foreground/60 hover:text-foreground/80 transition-colors"
           >
             PMP® Certified Project Manager
           </a>

@@ -136,14 +136,19 @@
   }
 
   .cta-icon {
-    @apply w-[18px] h-[18px] flex-shrink-0;
-    color: hsl(var(--foreground) / 0.6);
+    @apply w-4 h-4 flex-shrink-0;
+    color: hsl(var(--foreground) / 0.75);
   }
 
   .cta-primary {
     @apply backdrop-blur-xl border;
-    background: hsl(var(--glass-bg) / 0.1);
-    border-color: hsl(var(--glass-border) / 0.2);
+    background: hsl(var(--glass-bg) / 0.12);
+    border-color: hsl(var(--glass-border) / 0.25);
+  }
+
+  .cta-primary:hover {
+    background: hsl(var(--glass-bg) / 0.18);
+    border-color: hsl(var(--glass-border) / 0.3);
   }
 
   .cta-primary:hover {
