@@ -115,7 +115,7 @@ const Index = () => {
           variants={fadeInUp}
         >
           <p className="text-sm text-foreground/75">
-            Università Bocconi | Politecnico di Milano | LUISS
+            Università Bocconi · Politecnico di Milano · LUISS
           </p>
           <a
             href="https://salvatoremusella.com/credly"
