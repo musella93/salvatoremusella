@@ -142,10 +142,10 @@ const Index = () => {
                       href="https://www.linkedin.com/in/salvatoremusella"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <Linkedin className="w-[22px] h-[22px]" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
@@ -157,10 +157,10 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <a
                       href="mailto:salvatore_musella@outlook.com"
-                      className="w-11 h-11 flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Email"
                     >
-                      <Mail className="w-5 h-5" />
+                      <Mail className="w-[22px] h-[22px]" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
