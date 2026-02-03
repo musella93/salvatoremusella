@@ -33,7 +33,7 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          className="w-full max-w-[440px] glass-card px-8 py-6 md:px-10 md:py-8 space-y-5"
+          className="w-full max-w-[440px] glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
@@ -109,18 +109,18 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon" />
-                <span className="font-medium text-foreground/75">Credly Profile</span>
+                <span className="font-medium text-foreground/80">Credly Profile</span>
               </span>
             </a>
           </motion.nav>
 
           {/* Education & Certification */}
           <motion.section
-            className="text-center space-y-1"
+            className="text-center space-y-0.5"
             variants={fadeInUp}
           >
             <p className="text-sm text-foreground/70 tracking-wide">
-              Università Bocconi · Politecnico di Milano · LUISS
+              Università Bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
             </p>
             <a
               href="https://salvatoremusella.com/credly"
@@ -134,7 +134,7 @@ const Index = () => {
 
           {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-3 pt-1"
+            className="flex flex-col items-center gap-2.5"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
@@ -172,7 +172,7 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <p className="text-[11px] text-white/25 tracking-wide">
+            <p className="text-[11px] text-white/30 tracking-wide">
               © {new Date().getFullYear()} Salvatore Musella
             </p>
           </motion.footer>
