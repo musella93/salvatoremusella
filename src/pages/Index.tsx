@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, Download } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, UserPlus } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { profile } from "@/data/profile";
 import { downloadVCard } from "@/utils/generateVCard";
@@ -111,7 +111,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <CalendarClock className="cta-icon" />
-                <span className="font-medium text-foreground/95">Book a Quick Chat</span>
+                <span className="font-medium text-foreground/95">Schedule a Quick Call</span>
               </span>
             </a>
 
@@ -125,7 +125,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon" />
-                <span className="font-medium text-white/75">Credly Profile</span>
+                <span className="font-medium text-white/75">View Credentials</span>
               </span>
             </a>
           </motion.nav>
@@ -213,13 +213,13 @@ const Index = () => {
                     <button
                       onClick={handleSaveCard}
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      aria-label="Salva Contatto"
+                      aria-label="Add to Contacts"
                     >
-                      <Download className="w-[22px] h-[22px]" />
+                      <UserPlus className="w-[22px] h-[22px]" />
                     </button>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
-                    <p>Salva Contatto</p>
+                    <p>Add to Contacts</p>
                   </TooltipContent>
                 </Tooltip>
               </div>
