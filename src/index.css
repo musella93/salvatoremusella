@@ -164,13 +164,13 @@
 
   .cta-tertiary {
     @apply border;
-    background: transparent;
-    border-color: hsl(var(--glass-border) / 0.1);
+    background: hsl(var(--glass-bg) / 0.03);
+    border-color: hsl(var(--glass-border) / 0.12);
   }
 
   .cta-tertiary:hover {
-    background: hsl(var(--glass-bg) / 0.05);
-    border-color: hsl(var(--glass-border) / 0.15);
+    background: hsl(var(--glass-bg) / 0.08);
+    border-color: hsl(var(--glass-border) / 0.2);
   }
 
   /* Badge styles */
