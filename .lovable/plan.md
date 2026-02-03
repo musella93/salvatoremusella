@@ -1,67 +1,39 @@
 
+# Semplificazione Save Card: Solo VCF
 
-## 🎯 Personal Branding Landing Page — "Person Button"
+## Obiettivo
+Modificare il bottone "Save Card" per generare e scaricare solo il file VCF, rimuovendo completamente la generazione dell'immagine PNG.
 
-Una single-page landing page ultra-performante, dark-first e mobile-first, progettata per convertire i visitatori LinkedIn in azioni concrete.
+## Modifiche da effettuare
 
----
+### 1. Semplificare `src/pages/Index.tsx`
+- Rimuovere l'import di `BusinessCard` e `saveBusinessCard`
+- Rimuovere il `ref` e lo `useState` per la generazione
+- Rimuovere il componente `BusinessCard` nascosto (hidden offscreen)
+- Importare direttamente `downloadVCard` da `src/utils/generateVCard.ts`
+- Semplificare `handleSaveCard` per chiamare solo `downloadVCard()`
 
-### 📱 Design System
+### 2. Rimuovere file non più necessari
+- Eliminare `src/components/BusinessCard.tsx`
+- Eliminare `src/utils/saveBusinessCard.ts`
 
-**Stile: Premium Dark Glassmorphism**
-- Sfondo con gradiente profondo (slate-950 → zinc-900)
-- Pannelli "vetro" con backdrop-blur e bordi sottili semitrasparenti
-- Accenti indaco/blu elettrico diffusi e raffinati
-- Font Inter con fallback system
-- Rispetto rigoroso WCAG AA per il contrasto
+### 3. Aggiornare tooltip (opzionale)
+- Cambiare "Salva Business Card" → "Salva Contatto" per maggiore chiarezza
 
----
+## Dettagli tecnici
 
-### 🏗️ Struttura della Pagina
+Il codice del bottone diventerà molto più semplice:
 
-**1. Hero Section (Compatto)**
-- Avatar circolare 120×120px con ring decorativo (placeholder sostituibile)
-- Nome "Salvatore Musella" (H1)
-- Ruolo "Digital Product Manager" (H2)
-- Tagline "eCommerce • Mobile Apps • Digital Platforms"
+```text
+const handleSaveCard = () => {
+  downloadVCard();
+};
+```
 
-**2. Action Stack — 3 CTA Glass Pills**
-- **Resume (Primary)**: Link al CV con icona download e chevron, stile glass prominente
-- **Quick Chat (Secondary)**: Link Calendly con icona calendario, stile più sottile
-- **Credly (Tertiary)**: Link credenziali con icona badge, stile ghost/minimal
-- Sotto i CTA: link email "Prefer email? salvatore_musella@outlook.com"
+Nessun state, nessun ref, nessun async - solo un click che avvia il download del file `.vcf`.
 
-**3. Social Proof — Badges Certificazioni**
-- Label "CERTIFIED & EDUCATED AT"
-- Pill badges monocromatici: PMP, Polimi, LUISS, Bocconi, Adobe
+## Dipendenze da rimuovere
+Le librerie `html-to-image` e `qrcode.react` potranno essere rimosse dal `package.json` dato che non saranno più utilizzate.
 
-**4. Micro Footer**
-- Icona LinkedIn cliccabile
-- Copyright dinamico con anno corrente
-
----
-
-### ✨ Animazioni & Interazioni
-
-- Fade-in-up leggero (300-500ms) per avatar e bottoni usando Framer Motion
-- Rispetto di `prefers-reduced-motion` — animazioni disabilitate se richiesto
-- Hover states morbidi sui CTA
-- Focus states chiari per navigazione da tastiera
-
----
-
-### 🔍 SEO & Metadata per LinkedIn
-
-- Title ottimizzato: "Salvatore Musella | Digital Product Manager"
-- Meta description per la preview
-- Open Graph tags completi con placeholder per immagine OG (/og.png)
-
----
-
-### 📐 Layout & Responsività
-
-- Contenuto centrato verticalmente con card max-width 440px
-- Above-the-fold su desktop
-- Scroll minimo su mobile
-- Padding generoso e spacing pulito
-
+## Risultato finale
+Al click sull'icona Download, l'utente scaricherà direttamente il file `Salvatore-Musella.vcf` che su iOS/Android aprirà automaticamente la schermata "Aggiungi contatto".
