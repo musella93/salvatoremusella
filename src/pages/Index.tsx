@@ -166,7 +166,7 @@ const Index = () => {
               </Tooltip>
             </div>
           </TooltipProvider>
-          <p className="text-[11px] text-white/30 tracking-wide">
+          <p className="text-[11px] text-white/25 tracking-wide">
             © {new Date().getFullYear()} Salvatore Musella
           </p>
         </motion.footer>
