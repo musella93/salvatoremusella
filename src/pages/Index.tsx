@@ -53,7 +53,7 @@ const Index = () => {
             {/* Avatar */}
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-[150px] h-[150px] rounded-full ring-1 ring-white/15 overflow-hidden">
+                <div className="w-[170px] h-[170px] rounded-full ring-1 ring-white/15 overflow-hidden">
                   <img 
                     src={avatarImg} 
                     alt="Salvatore Musella - Digital Product Manager"
@@ -61,7 +61,7 @@ const Index = () => {
                   />
                 </div>
                 {/* Soft glow behind avatar */}
-                <div className="absolute inset-0 -z-10 w-[150px] h-[150px] rounded-full avatar-glow" />
+                <div className="absolute inset-0 -z-10 w-[170px] h-[170px] rounded-full avatar-glow" />
               </div>
             </div>
 
