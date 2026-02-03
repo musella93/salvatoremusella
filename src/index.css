@@ -142,18 +142,13 @@
 
   .cta-primary {
     @apply backdrop-blur-xl border;
-    background: hsl(var(--glass-bg) / 0.12);
-    border-color: hsl(var(--glass-border) / 0.25);
+    background: hsl(var(--glass-bg) / 0.14);
+    border-color: hsl(var(--glass-border) / 0.30);
   }
 
   .cta-primary:hover {
-    background: hsl(var(--glass-bg) / 0.18);
-    border-color: hsl(var(--glass-border) / 0.3);
-  }
-
-  .cta-primary:hover {
-    background: hsl(var(--glass-bg) / 0.15);
-    border-color: hsl(var(--glass-border) / 0.25);
+    background: hsl(var(--glass-bg) / 0.20);
+    border-color: hsl(var(--glass-border) / 0.35);
   }
 
   .cta-secondary {
