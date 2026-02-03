@@ -31,7 +31,7 @@ export async function addToContacts(): Promise<void> {
     type: "text/vcard;charset=utf-8" 
   });
 
-  // 1. Android-first: try native share sheet with VCF file
+  // 1. Try native share API (works well on Android and some iOS versions)
   try {
     if (navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share) {
       await navigator.share({ 
@@ -41,34 +41,29 @@ export async function addToContacts(): Promise<void> {
       return;
     }
   } catch (err) {
-    // User cancelled or share failed, continue to fallback
+    // User cancelled share
     if ((err as Error).name === "AbortError") {
-      return; // User cancelled, don't proceed
+      return;
     }
-    console.log("Share API failed, trying fallback:", err);
+    // Share failed, continue to fallback
+    console.log("Share API not available, using download fallback");
   }
 
-  // 2. iOS-friendly fallback: open blob URL in new tab
-  // This often triggers the iOS contact import UI
+  // 2. Fallback: Direct download with <a> element
+  // This works reliably on iOS Safari and triggers "Open in Contacts" prompt
   const blobUrl = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = blobUrl;
+  link.download = "Salvatore-Musella.vcf";
   
-  try {
-    const newWindow = window.open(blobUrl, "_blank");
-    
-    if (!newWindow || newWindow.closed) {
-      // Popup blocked, try location redirect
-      window.location.href = blobUrl;
-    }
-  } catch {
-    // 3. Final fallback: trigger normal download
-    const link = document.createElement("a");
-    link.href = blobUrl;
-    link.download = "Salvatore-Musella.vcf";
-    document.body.appendChild(link);
-    link.click();
+  // iOS Safari needs the link in DOM
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  
+  // Cleanup
+  setTimeout(() => {
     document.body.removeChild(link);
-  }
-  
-  // Clean up blob URL after a delay (give time for download/open)
-  setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
+    URL.revokeObjectURL(blobUrl);
+  }, 100);
 }
