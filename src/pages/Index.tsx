@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, MessageCircle, Download } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import avatarImg from "@/assets/avatar.jpg";
 
@@ -140,6 +140,41 @@ const Index = () => {
           >
             <TooltipProvider delayDuration={300}>
               <div className="flex items-center gap-1">
+                {/* WhatsApp */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="https://wa.me/393924499458"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      aria-label="WhatsApp"
+                    >
+                      <MessageCircle className="w-[22px] h-[22px]" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent className="hidden md:block">
+                    <p>WhatsApp</p>
+                  </TooltipContent>
+                </Tooltip>
+
+                {/* Email */}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <a
+                      href="mailto:salvatore_musella@outlook.com"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      aria-label="Email"
+                    >
+                      <Mail className="w-[22px] h-[22px]" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent className="hidden md:block">
+                    <p>Email</p>
+                  </TooltipContent>
+                </Tooltip>
+
+                {/* LinkedIn */}
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
@@ -157,18 +192,28 @@ const Index = () => {
                   </TooltipContent>
                 </Tooltip>
 
+                {/* Save Card */}
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="mailto:salvatore_musella@outlook.com"
+                      href="/business-card.png"
+                      download="Salvatore-Musella-Business-Card.png"
+                      onClick={(e) => {
+                        // iOS detection - Safari doesn't support download attribute well
+                        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                        if (isIOS) {
+                          e.preventDefault();
+                          window.open('/business-card.png', '_blank');
+                        }
+                      }}
                       className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      aria-label="Email"
+                      aria-label="Salva Business Card"
                     >
-                      <Mail className="w-[22px] h-[22px]" />
+                      <Download className="w-[22px] h-[22px]" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
-                    <p>Email</p>
+                    <p>Salva Business Card</p>
                   </TooltipContent>
                 </Tooltip>
               </div>
