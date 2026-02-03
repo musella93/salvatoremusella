@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import avatarImg from "@/assets/avatar.jpg";
 
@@ -63,6 +63,10 @@ const Index = () => {
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
                 Digital Product Manager
               </h2>
+              <p className="flex items-center justify-center gap-1.5 text-xs text-foreground/50">
+                <MapPin className="w-3 h-3" />
+                <span>Lugano, Switzerland</span>
+              </p>
             </div>
           </motion.header>
 
