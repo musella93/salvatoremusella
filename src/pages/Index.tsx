@@ -74,7 +74,7 @@ const Index = () => {
           >
             <span className="flex items-center gap-3">
               <FileDown className="w-5 h-5 text-foreground/80" />
-              <span className="font-medium text-foreground">Download Resume (PDF)</span>
+              <span className="font-medium text-foreground">Download Resume</span>
             </span>
             <ChevronRight className="w-5 h-5 text-foreground/50 group-hover:translate-x-0.5 transition-transform" />
           </a>
