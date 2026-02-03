@@ -149,24 +149,24 @@
 
   .cta-secondary {
     @apply border;
-    background: transparent;
-    border-color: hsl(var(--glass-border) / 0.1);
+    background: hsl(var(--glass-bg) / 0.05);
+    border-color: hsl(var(--glass-border) / 0.15);
   }
 
   .cta-secondary:hover {
-    background: hsl(var(--glass-bg) / 0.05);
-    border-color: hsl(var(--glass-border) / 0.15);
+    background: hsl(var(--glass-bg) / 0.08);
+    border-color: hsl(var(--glass-border) / 0.2);
   }
 
   .cta-tertiary {
     @apply border;
     background: transparent;
-    border-color: hsl(var(--glass-border) / 0.08);
+    border-color: hsl(var(--glass-border) / 0.1);
   }
 
   .cta-tertiary:hover {
     background: hsl(var(--glass-bg) / 0.05);
-    border-color: hsl(var(--glass-border) / 0.12);
+    border-color: hsl(var(--glass-border) / 0.15);
   }
 
   /* Badge styles */

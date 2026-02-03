@@ -56,7 +56,7 @@ const Index = () => {
             <h2 className="text-lg text-foreground/90 font-medium">
               Digital Product Manager
             </h2>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-slate-300">
               eCommerce • Mobile Apps • Digital Platforms
             </p>
           </div>
@@ -97,7 +97,7 @@ const Index = () => {
             data-cta="credly"
           >
             <Award className="cta-icon" />
-            <span className="font-medium text-muted-foreground">Verified Credentials</span>
+            <span className="font-medium text-white/80">Verified Credentials</span>
           </a>
 
           {/* Email helper text */}
