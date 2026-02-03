@@ -120,7 +120,7 @@ const Index = () => {
             className="text-center space-y-0.5 mt-2"
             variants={fadeInUp}
           >
-            <p className="text-xs text-foreground/70 tracking-wide">
+            <p className="text-xs text-foreground/70 tracking-wide whitespace-nowrap">
               Università Bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
             </p>
             <a
