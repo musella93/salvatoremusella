@@ -72,8 +72,10 @@ const Index = () => {
             className="cta-primary"
             data-cta="resume"
           >
-            <FileDown className="cta-icon" />
-            <span className="font-medium text-foreground">Download Resume</span>
+            <span className="cta-content">
+              <FileDown className="cta-icon" />
+              <span className="font-medium text-foreground">Download Resume</span>
+            </span>
           </a>
 
           {/* Secondary CTA - Quick Chat */}
@@ -84,8 +86,10 @@ const Index = () => {
             className="cta-secondary"
             data-cta="booking"
           >
-            <CalendarClock className="cta-icon" />
-            <span className="font-medium text-foreground/90">Book a Quick Chat</span>
+            <span className="cta-content">
+              <CalendarClock className="cta-icon" />
+              <span className="font-medium text-foreground">Book a Quick Chat</span>
+            </span>
           </a>
 
           {/* Tertiary CTA - Credly */}
@@ -96,8 +100,10 @@ const Index = () => {
             className="cta-tertiary"
             data-cta="credly"
           >
-            <Award className="cta-icon" />
-            <span className="font-medium text-white/80">Verified Credentials</span>
+            <span className="cta-content">
+              <Award className="cta-icon" />
+              <span className="font-medium text-foreground/80">Verified Credentials</span>
+            </span>
           </a>
 
           {/* Email helper text */}
