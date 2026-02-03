@@ -63,9 +63,6 @@ const Index = () => {
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
                 Digital Product Manager
               </h2>
-              <p className="text-sm text-muted-foreground tracking-wide">
-                eCommerce · Mobile Apps · Digital Platforms
-              </p>
             </div>
           </motion.header>
 
