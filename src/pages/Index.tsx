@@ -56,7 +56,7 @@ const Index = () => {
             <h2 className="text-lg text-foreground/90 font-medium">
               Digital Product Manager
             </h2>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-muted-foreground">
               eCommerce • Mobile Apps • Digital Platforms
             </p>
           </div>
@@ -102,7 +102,7 @@ const Index = () => {
           >
             <span className="cta-content">
               <Award className="cta-icon" />
-              <span className="font-medium text-foreground/80">Verified Credentials</span>
+              <span className="font-medium text-foreground/90">Verified Credentials</span>
             </span>
           </a>
 
@@ -118,25 +118,22 @@ const Index = () => {
           </p>
         </motion.nav>
 
-        {/* Social Proof - Credentials */}
+        {/* Education & Certification */}
         <motion.section
-          className="space-y-4"
+          className="text-center space-y-1.5"
           variants={fadeInUp}
-          aria-labelledby="credentials-label"
         >
-          <p
-            id="credentials-label"
-            className="text-center text-[10px] uppercase tracking-widest text-muted-foreground font-medium"
-          >
-            Certified & Educated At
+          <p className="text-sm text-foreground/70">
+            Università Bocconi • Politecnico di Milano • LUISS
           </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {["PMP", "Polimi", "LUISS", "Bocconi", "Adobe"].map((badge) => (
-              <span key={badge} className="badge-credential">
-                {badge}
-              </span>
-            ))}
-          </div>
+          <a
+            href="https://salvatoremusella.com/credly"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-xs text-muted-foreground hover:text-foreground/80 transition-colors"
+          >
+            PMP® Certified
+          </a>
         </motion.section>
 
         {/* Micro Footer */}
