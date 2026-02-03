@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { FileDown, CalendarClock, Award, ChevronRight, Linkedin } from "lucide-react";
+import avatarImg from "@/assets/avatar.jpg";
 
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
@@ -35,9 +36,12 @@ const Index = () => {
           {/* Avatar */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-[120px] h-[120px] rounded-full bg-secondary flex items-center justify-center ring-2 ring-white/20 overflow-hidden">
-                {/* Placeholder - replace with actual image */}
-                <span className="text-3xl font-semibold text-muted-foreground">SM</span>
+              <div className="w-[120px] h-[120px] rounded-full ring-2 ring-white/20 overflow-hidden">
+                <img 
+                  src={avatarImg} 
+                  alt="Salvatore Musella - Digital Product Manager"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Subtle glow behind avatar */}
               <div className="absolute inset-0 -z-10 w-[120px] h-[120px] rounded-full blur-2xl bg-primary/20" />
