@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, ChevronRight, Linkedin } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin } from "lucide-react";
 import avatarImg from "@/assets/avatar.jpg";
 
 const Index = () => {
@@ -69,14 +69,11 @@ const Index = () => {
             href="https://salvatoremusella.com/cv"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary group"
+            className="cta-primary"
             data-cta="resume"
           >
-            <span className="flex items-center gap-3">
-              <FileDown className="w-5 h-5 text-foreground/80" />
-              <span className="font-medium text-foreground">Download Resume</span>
-            </span>
-            <ChevronRight className="w-5 h-5 text-foreground/50 group-hover:translate-x-0.5 transition-transform" />
+            <FileDown className="cta-icon" />
+            <span className="font-medium text-foreground">Download Resume</span>
           </a>
 
           {/* Secondary CTA - Quick Chat */}
@@ -84,14 +81,11 @@ const Index = () => {
             href="https://salvatoremusella.com/quick-chat"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-secondary group"
+            className="cta-secondary"
             data-cta="booking"
           >
-            <span className="flex items-center gap-3">
-              <CalendarClock className="w-5 h-5 text-foreground/70" />
-              <span className="font-medium text-foreground/90">Book a Quick Chat</span>
-            </span>
-            <ChevronRight className="w-5 h-5 text-foreground/40 group-hover:translate-x-0.5 transition-transform" />
+            <CalendarClock className="cta-icon" />
+            <span className="font-medium text-foreground/90">Book a Quick Chat</span>
           </a>
 
           {/* Tertiary CTA - Credly */}
@@ -99,14 +93,11 @@ const Index = () => {
             href="https://salvatoremusella.com/credly"
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-tertiary group"
+            className="cta-tertiary"
             data-cta="credly"
           >
-            <span className="flex items-center gap-3">
-              <Award className="w-5 h-5 text-muted-foreground" />
-              <span className="text-muted-foreground font-medium">Verified Credentials</span>
-            </span>
-            <ChevronRight className="w-5 h-5 text-foreground/30 group-hover:translate-x-0.5 transition-transform" />
+            <Award className="cta-icon" />
+            <span className="font-medium text-muted-foreground">Verified Credentials</span>
           </a>
 
           {/* Email helper text */}
