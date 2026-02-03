@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, MessageCircle, ImageDown } from "lucide-react";
+import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { toPng } from "html-to-image";
 import avatarImg from "@/assets/avatar.jpg";
 
 const Index = () => {
@@ -25,25 +24,6 @@ const Index = () => {
         },
       };
 
-  const handleSaveCard = async () => {
-    const element = document.getElementById("profile-card");
-    if (!element) return;
-    
-    try {
-      const dataUrl = await toPng(element, {
-        cacheBust: true,
-        pixelRatio: 2,
-        backgroundColor: "#0a0a12",
-      });
-      
-      const link = document.createElement("a");
-      link.download = "Salvatore_Musella_Card.png";
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.error("Failed to save card:", err);
-    }
-  };
   return (
     <>
       {/* Ambient background with glows */}
@@ -53,7 +33,6 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          id="profile-card"
           className="w-full max-w-[440px] glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
           initial="initial"
           animate="animate"
@@ -154,58 +133,23 @@ const Index = () => {
             </a>
           </motion.section>
 
-          {/* Contact Dock */}
+          {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-3"
+            className="flex flex-col items-center gap-2 -mt-1"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
-              <div className="flex items-center justify-center gap-4">
-                {/* WhatsApp */}
+              <div className="flex items-center gap-1">
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <a
-                      href="https://wa.me/393924499458"
+                      href="https://www.linkedin.com/in/salvatoremusella"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="contact-dock-btn group"
-                      aria-label="WhatsApp"
-                    >
-                      <MessageCircle className="w-5 h-5 group-hover:text-green-400 transition-colors duration-300" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent className="hidden md:block">
-                    <p>WhatsApp</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                {/* Email */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href="mailto:salvatore_musella@outlook.com"
-                      className="contact-dock-btn"
-                      aria-label="Email"
-                    >
-                      <Mail className="w-5 h-5" />
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent className="hidden md:block">
-                    <p>Email</p>
-                  </TooltipContent>
-                </Tooltip>
-
-                {/* LinkedIn */}
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href="https://www.linkedin.com/in/salvatoremusella/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="contact-dock-btn"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="LinkedIn"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <Linkedin className="w-[22px] h-[22px]" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
@@ -213,19 +157,18 @@ const Index = () => {
                   </TooltipContent>
                 </Tooltip>
 
-                {/* Save Card */}
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button
-                      onClick={handleSaveCard}
-                      className="contact-dock-btn"
-                      aria-label="Save as Image"
+                    <a
+                      href="mailto:salvatore_musella@outlook.com"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      aria-label="Email"
                     >
-                      <ImageDown className="w-5 h-5" />
-                    </button>
+                      <Mail className="w-[22px] h-[22px]" />
+                    </a>
                   </TooltipTrigger>
                   <TooltipContent className="hidden md:block">
-                    <p>Save as Image</p>
+                    <p>Email</p>
                   </TooltipContent>
                 </Tooltip>
               </div>
