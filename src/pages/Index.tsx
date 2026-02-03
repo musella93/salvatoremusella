@@ -117,7 +117,7 @@ const Index = () => {
 
           {/* Education & Certification */}
           <motion.section
-            className="text-center space-y-0.5"
+            className="text-center space-y-0.5 mt-2"
             variants={fadeInUp}
           >
             <p className="text-xs text-foreground/70 tracking-wide">
