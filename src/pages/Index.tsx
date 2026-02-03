@@ -74,7 +74,7 @@ const Index = () => {
           <motion.nav className="w-full max-w-[360px] mx-auto space-y-2.5" variants={fadeInUp} aria-label="Primary actions">
             {/* Primary CTA - Resume */}
             <a
-              href="https://salvatoremusella.com/cv"
+              href="https://go.salvatoremusella.com/cv"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-primary"
@@ -88,7 +88,7 @@ const Index = () => {
 
             {/* Secondary CTA - Quick Chat */}
             <a
-              href="https://salvatoremusella.com/quick-chat"
+              href="https://go.salvatoremusella.com/quick-chat"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary"
@@ -102,7 +102,7 @@ const Index = () => {
 
             {/* Tertiary CTA - Credly */}
             <a
-              href="https://salvatoremusella.com/credly"
+              href="https://go.salvatoremusella.com/credly"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-tertiary"
