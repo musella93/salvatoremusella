@@ -34,8 +34,8 @@ export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () =>
     <button
       onClick={onToggle}
       aria-label="Toggle theme"
-      className="absolute top-[24px] -right-[16px] z-50
-                 w-9 h-9 flex items-center justify-center rounded-full
+      className="absolute top-[24px] -right-[20px] z-50
+                 w-11 h-11 flex items-center justify-center rounded-full
                  backdrop-blur-xl border transition-all duration-200
                  overflow-hidden
                  shadow-[0_2px_12px_rgba(0,0,0,0.10),0_0_0_0.5px_rgba(255,255,255,0.06)]
@@ -48,7 +48,7 @@ export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () =>
                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background
                  theme-toggle-glass"
     >
-      {theme === "dark" ? <Sun className="w-4 h-4 relative z-[2]" /> : <Moon className="w-4 h-4 relative z-[2]" />}
+      {theme === "dark" ? <Sun className="w-5 h-5 relative z-[2]" /> : <Moon className="w-5 h-5 relative z-[2]" />}
     </button>
   );
 }
