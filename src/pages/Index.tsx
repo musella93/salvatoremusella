@@ -100,7 +100,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <FileDown className="cta-icon" />
-                <span className="font-medium text-foreground/95">Download Resume</span>
+                <span className="font-medium text-white">Download Resume</span>
               </span>
             </a>
 
