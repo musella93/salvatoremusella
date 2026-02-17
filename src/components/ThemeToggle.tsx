@@ -34,14 +34,16 @@ export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () =>
     <button
       onClick={onToggle}
       aria-label="Toggle theme"
-      className="absolute top-[18px] right-[18px] translate-x-[35%] -translate-y-[35%] z-50
-                 w-12 h-12 flex items-center justify-center rounded-full
-                 backdrop-blur-md border transition-all duration-200 shadow-md
-                 dark:bg-white/8 dark:border-white/14 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/12
-                 bg-white/60 border-slate-900/10 text-slate-600 hover:text-slate-900 hover:bg-white/80
-                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="absolute top-[16px] right-[16px] translate-x-[45%] -translate-y-[45%] z-50
+                 w-11 h-11 flex items-center justify-center rounded-full
+                 backdrop-blur-xl border transition-all duration-200
+                 shadow-[0_2px_12px_rgba(0,0,0,0.08)]
+                 dark:bg-white/[0.08] dark:border-white/[0.15] dark:text-white/80 dark:hover:bg-white/[0.13] dark:active:bg-white/[0.10]
+                 bg-black/[0.05] border-black/[0.10] text-slate-700/80 hover:bg-black/[0.08] active:bg-black/[0.07]
+                 active:scale-[0.98]
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      {theme === "dark" ? <Sun className="w-[18px] h-[18px]" /> : <Moon className="w-[18px] h-[18px]" />}
     </button>
   );
 }
