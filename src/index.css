@@ -377,7 +377,7 @@
 
   :root:not(.dark) .accent-gradient-text,
   .light .accent-gradient-text {
-    background: linear-gradient(135deg, #c084fc, #818cf8, #60a5fa);
+    background: linear-gradient(135deg, hsl(270 40% 72%), hsl(235 35% 68%), hsl(210 45% 65%));
     -webkit-background-clip: text;
     background-clip: text;
     filter: none;
