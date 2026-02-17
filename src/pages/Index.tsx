@@ -67,8 +67,8 @@ const Index = () => {
                   <img 
                     src={profile.photoUrl} 
                     alt={`${profile.fullName} - ${profile.title}`}
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'none' }}
+                    className="w-full h-full object-cover relative z-[2]"
+                    style={{ filter: 'none', opacity: 1, mixBlendMode: 'normal' }}
                   />
                 </motion.div>
                 {/* Soft glow behind avatar */}
