@@ -3,6 +3,7 @@ import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, UserPlus } from
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { profile } from "@/data/profile";
 import { downloadVCard } from "@/utils/generateVCard";
+import { useTheme, ThemeToggle } from "@/components/ThemeToggle";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -16,6 +17,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const Index = () => {
   const shouldReduceMotion = useReducedMotion();
+  const { theme, toggle } = useTheme();
 
   const handleSaveCard = () => {
     downloadVCard();
@@ -41,6 +43,8 @@ const Index = () => {
 
   return (
     <>
+      <ThemeToggle theme={theme} onToggle={toggle} />
+
       {/* Ambient background with glows */}
       <div className="ambient-bg" aria-hidden="true" />
       <div className="ambient-glow-center" aria-hidden="true" />
@@ -59,7 +63,7 @@ const Index = () => {
             <div className="flex justify-center">
               <div className="relative group">
                 <motion.div 
-                  className="w-[170px] h-[170px] rounded-full ring-1 ring-white/15 overflow-hidden"
+                  className="w-[170px] h-[170px] rounded-full ring-1 ring-foreground/15 overflow-hidden"
                 >
                   <img 
                     src={profile.photoUrl} 
@@ -72,7 +76,7 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Name & Title - Typography-first */}
+            {/* Name & Title */}
             <div className="space-y-2.5">
               <h1 className="text-[1.75rem] md:text-[2rem] font-semibold text-foreground tracking-tight leading-tight">
                 {profile.fullName}
@@ -80,7 +84,7 @@ const Index = () => {
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
                 Digital <span className="accent-gradient-text">Product</span> Manager
               </h2>
-              <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 -mt-1">
+              <p className="flex items-center justify-center gap-1.5 text-xs text-muted-foreground -mt-1">
                 <MapPin className="w-3 h-3 opacity-60" />
                 <span>{profile.location}</span>
               </p>
@@ -99,7 +103,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <FileDown className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium text-white">Download Resume</span>
+                <span className="font-medium text-foreground">Download Resume</span>
               </span>
             </a>
 
@@ -113,7 +117,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <CalendarClock className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium text-white/90">Book a Quick Chat</span>
+                <span className="font-medium text-foreground/90">Book a Quick Chat</span>
               </span>
             </a>
 
@@ -127,7 +131,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium text-white/80">View Credentials</span>
+                <span className="font-medium text-foreground/80">View Credentials</span>
               </span>
             </a>
           </motion.nav>
@@ -164,7 +168,7 @@ const Index = () => {
                       href={profile.whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="WhatsApp"
                     >
                       <WhatsAppIcon className="w-[20px] h-[20px]" />
@@ -180,7 +184,7 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <a
                       href={`mailto:${profile.email}`}
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Email"
                     >
                       <Mail className="w-[22px] h-[22px]" />
@@ -198,7 +202,7 @@ const Index = () => {
                       href={profile.linkedinUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="w-[22px] h-[22px]" />
@@ -214,7 +218,7 @@ const Index = () => {
                   <TooltipTrigger asChild>
                     <button
                       onClick={handleSaveCard}
-                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                      className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-all duration-300 rounded-full hover:bg-foreground/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       aria-label="Add to Contacts"
                     >
                       <UserPlus className="w-[22px] h-[22px]" />
@@ -226,7 +230,7 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <p className="text-[11px] text-white/30 tracking-wide">
+            <p className="text-[11px] text-foreground/30 tracking-wide">
               © {new Date().getFullYear()} {profile.fullName}
             </p>
           </motion.footer>
