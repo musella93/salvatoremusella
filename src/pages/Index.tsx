@@ -57,16 +57,19 @@ const Index = () => {
           <motion.header className="text-center space-y-4" variants={fadeInUp}>
             {/* Avatar */}
             <div className="flex justify-center">
-              <div className="relative">
-                <div className="w-[170px] h-[170px] rounded-full ring-1 ring-white/15 overflow-hidden">
+              <div className="relative group">
+                <motion.div 
+                  className="w-[170px] h-[170px] rounded-full ring-1 ring-white/15 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
+                  whileHover={{ y: -2 }}
+                >
                   <img 
                     src={profile.photoUrl} 
                     alt={`${profile.fullName} - ${profile.title}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                </div>
+                </motion.div>
                 {/* Soft glow behind avatar */}
-                <div className="absolute inset-0 -z-10 w-[170px] h-[170px] rounded-full avatar-glow" />
+                <div className="absolute inset-0 -z-10 w-[170px] h-[170px] rounded-full avatar-glow transition-all duration-500 group-hover:opacity-100 group-hover:scale-110" />
               </div>
             </div>
 
