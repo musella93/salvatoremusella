@@ -99,7 +99,7 @@ const Index = () => {
               data-cta="resume"
             >
               <span className="cta-content">
-                <FileDown className="cta-icon" />
+                <FileDown className="cta-icon w-4 h-4 flex-shrink-0" />
                 <span className="font-medium text-white">Download Resume</span>
               </span>
             </a>
@@ -113,8 +113,8 @@ const Index = () => {
               data-cta="booking"
             >
               <span className="cta-content">
-                <CalendarClock className="cta-icon" />
-                <span className="font-medium text-foreground/90">Book a Quick Chat</span>
+                <CalendarClock className="cta-icon w-4 h-4 flex-shrink-0" />
+                <span className="font-medium text-white/90">Book a Quick Chat</span>
               </span>
             </a>
 
@@ -127,8 +127,8 @@ const Index = () => {
               data-cta="credly"
             >
               <span className="cta-content">
-                <Award className="cta-icon" />
-                <span className="font-medium text-foreground/85">View Credentials</span>
+                <Award className="cta-icon w-4 h-4 flex-shrink-0" />
+                <span className="font-medium text-white/80">View Credentials</span>
               </span>
             </a>
           </motion.nav>

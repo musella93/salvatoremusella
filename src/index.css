@@ -275,7 +275,8 @@
     @apply flex items-center justify-center w-full rounded-full 
            backdrop-blur-md border
            transition-all duration-300 ease-out
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    min-height: 52px;
     padding: 0 1.5rem;
   }
 
@@ -283,71 +284,37 @@
     @apply flex items-center justify-center gap-2.5;
   }
 
-  .cta-icon {
-    @apply w-4 h-4 flex-shrink-0;
-    color: hsl(var(--foreground) / 0.7);
-  }
-
   .cta-primary {
-    min-height: 56px;
     background: hsl(0 0% 100% / 0.18);
     border-color: hsl(0 0% 100% / 0.24);
-    position: relative;
-    overflow: hidden;
   }
-
-  /* Soft internal sheen on primary only */
-  .cta-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      hsl(0 0% 100% / 0.06) 0%,
-      transparent 100%
-    );
-    border-radius: inherit;
-    pointer-events: none;
-  }
-
+  .cta-primary .cta-icon { color: hsl(0 0% 100% / 0.90); }
   .cta-primary:hover {
     background: hsl(0 0% 100% / 0.22);
-    border-color: hsl(0 0% 100% / 0.30);
+    border-color: hsl(0 0% 100% / 0.28);
     transform: translateY(-1px);
   }
 
   .cta-secondary {
-    min-height: 52px;
     background: hsl(0 0% 100% / 0.12);
     border-color: hsl(0 0% 100% / 0.18);
   }
-
+  .cta-secondary .cta-icon { color: hsl(0 0% 100% / 0.80); }
   .cta-secondary:hover {
     background: hsl(0 0% 100% / 0.16);
-    border-color: hsl(0 0% 100% / 0.24);
+    border-color: hsl(0 0% 100% / 0.22);
     transform: translateY(-1px);
   }
 
   .cta-tertiary {
-    min-height: 52px;
     background: hsl(0 0% 100% / 0.07);
     border-color: hsl(0 0% 100% / 0.14);
   }
-
+  .cta-tertiary .cta-icon { color: hsl(0 0% 100% / 0.70); }
   .cta-tertiary:hover {
     background: hsl(0 0% 100% / 0.11);
-    border-color: hsl(0 0% 100% / 0.20);
+    border-color: hsl(0 0% 100% / 0.18);
     transform: translateY(-1px);
-  }
-
-  .cta-primary:focus-visible,
-  .cta-secondary:focus-visible,
-  .cta-tertiary:focus-visible {
-    background: hsl(0 0% 100% / 0.14);
-    border-color: hsl(0 0% 100% / 0.28);
   }
 
   /* Badge styles */
