@@ -302,7 +302,7 @@
   }
 
   .liquid-glass-card {
-    @apply backdrop-blur-xl border rounded-3xl relative overflow-hidden;
+    @apply backdrop-blur-xl border rounded-3xl relative;
   }
 
   .dark .liquid-glass-card {
