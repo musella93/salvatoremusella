@@ -43,8 +43,6 @@ const Index = () => {
 
   return (
     <>
-      <ThemeToggle theme={theme} onToggle={toggle} />
-
       {/* Ambient background with glows */}
       <div className="ambient-bg" aria-hidden="true" />
       <div className="ambient-glow-center" aria-hidden="true" />
@@ -52,11 +50,12 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          className="w-full max-w-[440px] liquid-glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
+          className="relative w-full max-w-[440px] liquid-glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
         >
+          <ThemeToggle theme={theme} onToggle={toggle} />
           {/* Hero Section */}
           <motion.header className="text-center space-y-4" variants={fadeInUp}>
             {/* Avatar */}
@@ -69,6 +68,7 @@ const Index = () => {
                     src={profile.photoUrl} 
                     alt={`${profile.fullName} - ${profile.title}`}
                     className="w-full h-full object-cover"
+                    style={{ filter: 'none' }}
                   />
                 </motion.div>
                 {/* Soft glow behind avatar */}
