@@ -212,11 +212,67 @@
     border-color: hsl(var(--glass-border) / 0.08);
   }
 
+  /* Liquid Glass card - Apple-inspired frosted glass */
+  .liquid-glass-card {
+    @apply backdrop-blur-xl border rounded-3xl relative overflow-hidden;
+    background: hsl(var(--glass-bg) / 0.07);
+    border-color: hsl(var(--glass-border) / 0.10);
+  }
+
+  .liquid-glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 50%;
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.06) 0%,
+      hsl(0 0% 100% / 0.02) 40%,
+      transparent 70%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .liquid-glass-card::before {
+      animation: sheen-drift 25s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes sheen-drift {
+    0% { opacity: 0.8; transform: translate(0, 0); }
+    100% { opacity: 1; transform: translate(8px, 4px); }
+  }
+
+  /* Accent gradient text */
+  .accent-gradient-text {
+    background: linear-gradient(135deg, hsl(260 60% 65%), hsl(220 70% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    filter: drop-shadow(0 0 20px hsl(240 60% 55% / 0.2));
+  }
+
+  @supports not (background-clip: text) {
+    .accent-gradient-text {
+      -webkit-text-fill-color: hsl(230 65% 62%);
+      color: hsl(230 65% 62%);
+      background: none;
+      filter: none;
+    }
+  }
+
   /* CTA button styles - minimal glass pills */
   .cta-primary,
   .cta-secondary,
   .cta-tertiary {
     @apply flex items-center justify-center w-full rounded-full 
+           backdrop-blur-md border
            transition-all duration-300 ease-out
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     min-height: 52px;
@@ -233,44 +289,43 @@
   }
 
   .cta-primary {
-    @apply backdrop-blur-md border;
-    background: hsl(var(--glass-bg) / 0.16);
-    border-color: hsl(var(--glass-border) / 0.25);
+    background: hsl(0 0% 100% / 0.14);
+    border-color: hsl(0 0% 100% / 0.20);
   }
 
   .cta-primary:hover {
-    background: hsl(var(--glass-bg) / 0.20);
-    border-color: hsl(var(--glass-border) / 0.35);
+    background: hsl(0 0% 100% / 0.18);
+    border-color: hsl(0 0% 100% / 0.28);
     transform: translateY(-1px);
   }
 
   .cta-secondary {
-    @apply border;
-    background: hsl(var(--glass-bg) / 0.05);
-    border-color: hsl(var(--glass-border) / 0.10);
+    background: hsl(0 0% 100% / 0.08);
+    border-color: hsl(0 0% 100% / 0.14);
   }
 
   .cta-secondary:hover {
-    background: hsl(var(--glass-bg) / 0.07);
-    border-color: hsl(var(--glass-border) / 0.18);
+    background: hsl(0 0% 100% / 0.12);
+    border-color: hsl(0 0% 100% / 0.22);
     transform: translateY(-1px);
   }
 
   .cta-tertiary {
-    @apply border;
-    background: hsl(var(--glass-bg) / 0.04);
-    border-color: hsl(var(--glass-border) / 0.12);
+    background: hsl(0 0% 100% / 0.05);
+    border-color: hsl(0 0% 100% / 0.10);
   }
 
   .cta-tertiary:hover {
-    background: hsl(var(--glass-bg) / 0.08);
-    border-color: hsl(var(--glass-border) / 0.22);
+    background: hsl(0 0% 100% / 0.09);
+    border-color: hsl(0 0% 100% / 0.18);
     transform: translateY(-1px);
   }
 
+  .cta-primary:focus-visible,
+  .cta-secondary:focus-visible,
   .cta-tertiary:focus-visible {
-    background: hsl(var(--glass-bg) / 0.08);
-    border-color: hsl(var(--glass-border) / 0.22);
+    background: hsl(0 0% 100% / 0.12);
+    border-color: hsl(0 0% 100% / 0.25);
   }
 
   /* Badge styles */

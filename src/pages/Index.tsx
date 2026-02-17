@@ -48,7 +48,7 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          className="w-full max-w-[440px] glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
+          className="w-full max-w-[440px] liquid-glass-card px-8 pt-6 pb-5 md:px-10 md:pt-8 md:pb-6 space-y-5"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
@@ -79,7 +79,7 @@ const Index = () => {
                 {profile.fullName}
               </h1>
               <h2 className="text-lg md:text-xl text-foreground/90 font-medium tracking-tight">
-                {profile.title}
+                Digital <span className="accent-gradient-text">Product</span> Manager
               </h2>
               <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 -mt-1">
                 <MapPin className="w-3 h-3 opacity-60" />
@@ -100,7 +100,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <FileDown className="cta-icon" />
-                <span className="font-medium text-foreground">Download Resume</span>
+                <span className="font-medium text-foreground/95">Download Resume</span>
               </span>
             </a>
 
@@ -114,7 +114,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon" />
-                <span className="font-medium text-white/75">View Credentials</span>
+                <span className="font-medium text-foreground/85">View Credentials</span>
               </span>
             </a>
 
@@ -128,7 +128,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <CalendarClock className="cta-icon" />
-                <span className="font-medium text-foreground/95">Schedule a Quick Call</span>
+                <span className="font-medium text-foreground/90">Book a Quick Chat</span>
               </span>
             </a>
           </motion.nav>
