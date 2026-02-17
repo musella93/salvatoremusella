@@ -117,7 +117,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <CalendarClock className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium text-foreground/90">Book a Quick Chat</span>
+                <span className="font-medium text-foreground/[0.87]">Book a Quick Chat</span>
               </span>
             </a>
 
@@ -131,7 +131,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Award className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium text-foreground/80">View Credentials</span>
+                <span className="font-medium text-foreground/[0.85]">View Credentials</span>
               </span>
             </a>
           </motion.nav>
