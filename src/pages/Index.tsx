@@ -104,20 +104,6 @@ const Index = () => {
               </span>
             </a>
 
-            {/* Secondary CTA - Quick Chat */}
-            <a
-              href="https://go.salvatoremusella.com/quick-chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-secondary"
-              data-cta="booking"
-            >
-              <span className="cta-content">
-                <CalendarClock className="cta-icon" />
-                <span className="font-medium text-foreground/95">Schedule a Quick Call</span>
-              </span>
-            </a>
-
             {/* Tertiary CTA - Credly */}
             <a
               href="https://go.salvatoremusella.com/credly"
@@ -129,6 +115,20 @@ const Index = () => {
               <span className="cta-content">
                 <Award className="cta-icon" />
                 <span className="font-medium text-white/75">View Credentials</span>
+              </span>
+            </a>
+
+            {/* Secondary CTA - Quick Chat */}
+            <a
+              href="https://go.salvatoremusella.com/quick-chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-secondary"
+              data-cta="booking"
+            >
+              <span className="cta-content">
+                <CalendarClock className="cta-icon" />
+                <span className="font-medium text-foreground/95">Schedule a Quick Call</span>
               </span>
             </a>
           </motion.nav>
