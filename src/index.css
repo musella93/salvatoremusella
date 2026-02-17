@@ -285,35 +285,35 @@
   }
 
   .cta-primary {
-    background: hsl(0 0% 100% / 0.18);
-    border-color: hsl(0 0% 100% / 0.24);
+    background: hsl(0 0% 100% / 0.20);
+    border-color: hsl(0 0% 100% / 0.28);
   }
   .cta-primary .cta-icon { color: hsl(0 0% 100% / 0.90); }
   .cta-primary:hover {
-    background: hsl(0 0% 100% / 0.22);
-    border-color: hsl(0 0% 100% / 0.28);
+    background: hsl(0 0% 100% / 0.25);
+    border-color: hsl(0 0% 100% / 0.34);
     transform: translateY(-1px);
   }
 
   .cta-secondary {
-    background: hsl(0 0% 100% / 0.12);
-    border-color: hsl(0 0% 100% / 0.18);
+    background: hsl(0 0% 100% / 0.10);
+    border-color: hsl(0 0% 100% / 0.16);
   }
-  .cta-secondary .cta-icon { color: hsl(0 0% 100% / 0.80); }
+  .cta-secondary .cta-icon { color: hsl(0 0% 100% / 0.75); }
   .cta-secondary:hover {
-    background: hsl(0 0% 100% / 0.16);
+    background: hsl(0 0% 100% / 0.14);
     border-color: hsl(0 0% 100% / 0.22);
     transform: translateY(-1px);
   }
 
   .cta-tertiary {
-    background: hsl(0 0% 100% / 0.07);
-    border-color: hsl(0 0% 100% / 0.14);
+    background: hsl(0 0% 100% / 0.05);
+    border-color: hsl(0 0% 100% / 0.10);
   }
-  .cta-tertiary .cta-icon { color: hsl(0 0% 100% / 0.70); }
+  .cta-tertiary .cta-icon { color: hsl(0 0% 100% / 0.65); }
   .cta-tertiary:hover {
-    background: hsl(0 0% 100% / 0.11);
-    border-color: hsl(0 0% 100% / 0.18);
+    background: hsl(0 0% 100% / 0.09);
+    border-color: hsl(0 0% 100% / 0.16);
     transform: translateY(-1px);
   }
 
