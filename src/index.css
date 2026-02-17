@@ -250,13 +250,14 @@
 
   /* Accent gradient text */
   .accent-gradient-text {
-    background: linear-gradient(135deg, #a78bfa, #6366f1, #3b82f6);
+    background: linear-gradient(135deg, #e879f9 0%, #a78bfa 50%, #3b82f6 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
-    filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.1));
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.15));
+    font-style: italic;
   }
 
   @supports not (background-clip: text) {
