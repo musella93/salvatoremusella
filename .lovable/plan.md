@@ -1,27 +1,19 @@
 
-The plan is to regenerate the Social (Open Graph) image to adjust the spacing between the avatar and the name, while also fixing a persistent typo in the location line and ensuring the background gradient remains perfectly consistent with the business card's dark theme.
 
-### Steps for Social Image Update (OG Image)
+## Social Image (OG) Update
 
-1.  **Reference Avatar and Colors**:
-    - Use the existing `src/assets/avatar.jpg` as the central image.
-    - Extract the precise gradient colors from `src/index.css` to ensure the background matches the live site exactly (a dark navy gradient ranging from `#05070F` to `#0D101C`).
+Aggiornamento della social image `public/og-image.png` con due modifiche precise:
 
-2.  **Image Generation Specifications**:
-    - **Dimensions**: 1200x630 pixels.
-    - **Background**: Smooth diagonal gradient (165 degrees) using the dark navy tones of the site.
-    - **Avatar**: Circular profile photo, centered horizontally, with **no border** (as requested in the previous turn).
-    - **Text Content**:
-        - **Name**: "Salvatore Musella" (White, bold, high contrast).
-        - **Role**: "Digital Product Manager" (White at ~85% opacity).
-        - **Location**: "Lugano, Switzerland" (White at ~60% opacity). **Note**: I will ensure "Switzerland" is spelled correctly this time, fixing the previous "Switzerand" typo.
-    - **Layout & Spacing**:
-        - Set the vertical gap between the bottom of the circular avatar and the top of the name text to exactly **16px**.
-        - Maintain generous safe margins on the sides for optimal display on LinkedIn, WhatsApp, and X (Twitter).
+1. **Riduzione avatar del 40%**: Il diametro della foto circolare viene ridotto del 40% rispetto alla dimensione attuale, mantenendo centratura e maschera circolare.
 
-3.  **Deployment**:
-    - Replace `public/og-image.png` with the newly generated asset.
+2. **Riduzione gap del 50%**: Lo spazio verticale tra il bordo inferiore dell'avatar e il testo "Salvatore Musella" viene dimezzato rispetto al valore attuale.
 
-### Technical Details
-- **Tool**: Image generation model (Gemini 2.5 Flash Image) to process the avatar and render the typography precisely.
-- **Consistency**: By using the same gradient HSL values converted to Hex, the transition from social preview to the actual website will feel seamless.
+Tutto il resto rimane identico: sfondo, gradienti, font, pesi, allineamento, icona MapPin sulla riga "Lugano, Switzerland", e opacita dei testi.
+
+### Dettagli tecnici
+
+- Strumento: `imagegen--edit_image` con istruzioni precise su riduzione percentuale avatar e gap.
+- File modificato: `public/og-image.png`
+- Dimensioni: 1200x630px invariate.
+- Nessuna modifica al codice dell'app.
+
