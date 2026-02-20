@@ -1,19 +1,23 @@
 
 
-## Social Image (OG) Update
+## Sostituzione Social Image (Open Graph)
 
-Aggiornamento della social image `public/og-image.png` con due modifiche precise:
+L'immagine caricata verra utilizzata direttamente come nuova social image OG, con ottimizzazione tecnica.
 
-1. **Riduzione avatar del 40%**: Il diametro della foto circolare viene ridotto del 40% rispetto alla dimensione attuale, mantenendo centratura e maschera circolare.
+### Passaggi
 
-2. **Riduzione gap del 50%**: Lo spazio verticale tra il bordo inferiore dell'avatar e il testo "Salvatore Musella" viene dimezzato rispetto al valore attuale.
+1. **Copia dell'immagine** nel progetto come `public/og-image.png`, sovrascrivendo quella attuale.
 
-Tutto il resto rimane identico: sfondo, gradienti, font, pesi, allineamento, icona MapPin sulla riga "Lugano, Switzerland", e opacita dei testi.
+2. **Ottimizzazione tecnica** tramite il modello di image generation per garantire:
+   - Dimensioni esatte 1200x630px (standard OG)
+   - Compressione PNG ottimale
+   - Nitidezza e leggibilita del testo su tutte le piattaforme (LinkedIn, Twitter/X, WhatsApp, Telegram, iMessage)
+
+3. **Nessuna modifica al codice**: i meta tag in `index.html` puntano gia a `/og-image.png` (righe 19 e 26), quindi non serve toccare nulla.
 
 ### Dettagli tecnici
 
-- Strumento: `imagegen--edit_image` con istruzioni precise su riduzione percentuale avatar e gap.
-- File modificato: `public/og-image.png`
-- Dimensioni: 1200x630px invariate.
-- Nessuna modifica al codice dell'app.
+- File modificato: `public/og-image.png` (sovrascrittura)
+- Strumento: copia diretta del file caricato dall'utente, eventualmente rielaborato con `imagegen` per il resize esatto a 1200x630 se necessario
+- Nessuna modifica a `index.html`, `src/data/profile.ts`, o altri file
 
