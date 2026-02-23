@@ -1,23 +1,28 @@
 
 
-## Sostituzione Social Image (Open Graph)
+## Aggiunta file `_redirects` per Netlify
 
-L'immagine caricata verra utilizzata direttamente come nuova social image OG, con ottimizzazione tecnica.
+### Cosa viene fatto
 
-### Passaggi
+Creazione del file `public/_redirects` (senza estensione) con la regola standard per SPA React/Vite su Netlify:
 
-1. **Copia dell'immagine** nel progetto come `public/og-image.png`, sovrascrivendo quella attuale.
+```text
+/*    /index.html   200
+```
 
-2. **Ottimizzazione tecnica** tramite il modello di image generation per garantire:
-   - Dimensioni esatte 1200x630px (standard OG)
-   - Compressione PNG ottimale
-   - Nitidezza e leggibilita del testo su tutte le piattaforme (LinkedIn, Twitter/X, WhatsApp, Telegram, iMessage)
+### Perche la regola `200` e non `301` o `302`
 
-3. **Nessuna modifica al codice**: i meta tag in `index.html` puntano gia a `/og-image.png` (righe 19 e 26), quindi non serve toccare nulla.
+Con una SPA (Single Page Application), tutte le rotte sono gestite lato client da React Router. La regola `/* /index.html 200` dice a Netlify di servire sempre `index.html` con status 200, lasciando che React Router gestisca internamente il routing e mostri la pagina corretta (o la pagina NotFound gia presente nel progetto per rotte inesistenti).
+
+Un redirect 301/302 cambierebbe l'URL nel browser, rompendo il routing interno.
+
+### File coinvolti
+
+- **Creato**: `public/_redirects` (1 riga)
+- **Nessuna modifica** ad altri file
 
 ### Dettagli tecnici
 
-- File modificato: `public/og-image.png` (sovrascrittura)
-- Strumento: copia diretta del file caricato dall'utente, eventualmente rielaborato con `imagegen` per il resize esatto a 1200x630 se necessario
-- Nessuna modifica a `index.html`, `src/data/profile.ts`, o altri file
+- Vite copia automaticamente tutti i file da `public/` nella root della build, quindi `_redirects` finira nella posizione corretta per Netlify
+- La pagina `NotFound.tsx` gia configurata in `App.tsx` continuera a funzionare normalmente per rotte non definite
 
