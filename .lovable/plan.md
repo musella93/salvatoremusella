@@ -1,15 +1,23 @@
 
 
-## Redirect automatico alla Home Page per rotte inesistenti
+## Aggiornamento link PMP
 
 ### Cosa cambia
 
-Il componente `NotFound.tsx` verra modificato per eseguire un redirect immediato alla home page (`/`) invece di mostrare la pagina 404. In questo modo, qualsiasi URL inesistente portera direttamente alla home senza che l'utente veda nulla.
+Il link del badge "PMP® Certified Project Manager" in `src/pages/Index.tsx` (riga 148) verra aggiornato da:
+
+```
+https://www.credly.com/badges/78c536ac-737f-4997-8579-d736ea328bc8/public_url
+```
+
+a:
+
+```
+https://go.salvatoremusella.com/PMP
+```
 
 ### Dettagli tecnici
 
-- **File modificato**: `src/pages/NotFound.tsx`
-- Si sostituisce il contenuto attuale (pagina 404 visibile) con un `useEffect` + `useNavigate()` di React Router che reindirizza immediatamente a `/`
-- Il componente restituira `null` (nessun contenuto visibile) durante il brevissimo istante prima del redirect
-- Nessuna modifica ad `App.tsx`, `_redirects` o altri file
+- **File modificato**: `src/pages/Index.tsx` (solo riga 148)
+- Nessun'altra modifica: classe CSS, attributi `target="_blank"` e `rel="noopener noreferrer"` restano invariati
 
