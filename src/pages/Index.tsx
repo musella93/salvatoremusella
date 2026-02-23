@@ -145,7 +145,7 @@ const Index = () => {
               Università Bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
             </p>
             <a
-              href="https://www.credly.com/badges/78c536ac-737f-4997-8579-d736ea328bc8/public_url"
+              href="https://go.salvatoremusella.com/PMP"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block text-[11px] text-foreground/50 hover:text-foreground/70 transition-colors duration-300"
