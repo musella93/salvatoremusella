@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Share, Link } from "lucide-react";
+import { Share2, Link } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -54,7 +54,7 @@ export function ShareButton() {
                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background
                    theme-toggle-glass"
       >
-        <Share className="w-5 h-5 relative z-[2]" />
+        <Share2 className="w-5 h-5 relative z-[2]" />
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -84,7 +84,7 @@ export function ShareButton() {
                              hover:bg-primary/90 transition-colors duration-200
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
                 >
-                  <Share className="w-4 h-4" />
+                  <Share2 className="w-4 h-4" />
                   Share via…
                 </button>
               )}
