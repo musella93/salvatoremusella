@@ -61,7 +61,7 @@ export function ShareButton() {
                          dark:bg-white/[0.07] dark:border-white/10
                          shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
                          dark:shadow-none">
-          <div className="flex flex-col items-center gap-2.5">
+          <div className="flex flex-col items-center gap-3">
             {/* QR Code */}
             <div className="p-3 rounded-2xl bg-white">
               <QRCodeSVG
