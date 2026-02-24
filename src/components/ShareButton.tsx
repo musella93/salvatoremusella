@@ -68,24 +68,26 @@ export function ShareButton() {
                          before:absolute before:inset-0 before:rounded-3xl before:pointer-events-none before:z-[1]
                          before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.18)_0%,_transparent_70%)]
                          dark:before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.06)_0%,_transparent_70%)]">
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-3 w-full">
             {/* QR Code */}
-            <div className="p-3 rounded-2xl bg-white">
-              <QRCodeSVG
-                value={SHARE_URL}
-                size={148}
-                level="M"
-                bgColor="#ffffff"
-                fgColor="#000000"
-              />
+            <div className="w-full max-w-[280px] mx-auto flex justify-center">
+              <div className="p-3 rounded-2xl bg-white">
+                <QRCodeSVG
+                  value={SHARE_URL}
+                  size={148}
+                  level="M"
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                />
+              </div>
             </div>
 
             {/* Actions */}
-            <div className="w-full flex flex-col items-center gap-2">
+            <div className="w-full max-w-[280px] mx-auto flex flex-col items-center gap-2">
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="w-full max-w-[320px] mx-auto rounded-full h-11 flex items-center justify-center gap-2
+                  className="w-full rounded-full h-11 flex items-center justify-center gap-2
                              bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm
                              border border-blue-500/30 transition-colors duration-200
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
@@ -96,7 +98,7 @@ export function ShareButton() {
               )}
               <button
                 onClick={handleCopyLink}
-                className="cta-secondary w-full max-w-[320px] mx-auto !min-h-[44px]"
+                className="cta-secondary w-full !min-h-[44px]"
               >
                 <span className="cta-content text-foreground/90 dark:text-white/90">
                   <Link className="w-4 h-4" />
