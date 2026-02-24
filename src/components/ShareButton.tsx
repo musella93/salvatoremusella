@@ -9,7 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const CANONICAL_URL = "https://salvatoremusella.lovable.app";
+const SHARE_URL = "https://go.salvatoremusella.com/hello";
 
 export function ShareButton() {
   const [open, setOpen] = useState(false);
@@ -19,8 +19,8 @@ export function ShareButton() {
   const handleNativeShare = async () => {
     try {
       await navigator.share({
-        title: "Salvatore Musella",
-        url: CANONICAL_URL,
+        title: "Salvatore Musella - Digital Product Manager",
+        url: SHARE_URL,
       });
     } catch (e) {
       // user cancelled or error
@@ -29,7 +29,7 @@ export function ShareButton() {
 
   const handleCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText(CANONICAL_URL);
+      await navigator.clipboard.writeText(SHARE_URL);
       toast({ title: "Copied", description: "Link copied to clipboard" });
     } catch {
       toast({ title: "Error", description: "Could not copy link", variant: "destructive" });
@@ -66,7 +66,7 @@ export function ShareButton() {
             {/* QR Code */}
             <div className="p-4 rounded-2xl bg-white">
               <QRCodeSVG
-                value={CANONICAL_URL}
+                value={SHARE_URL}
                 size={160}
                 level="M"
                 bgColor="#ffffff"
