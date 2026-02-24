@@ -5,8 +5,6 @@ import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
 } from "@/components/ui/dialog";
 
 const SHARE_URL = "https://go.salvatoremusella.com/hello";
@@ -58,16 +56,17 @@ export function ShareButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[340px] backdrop-blur-xl border dark:bg-white/5 dark:border-white/10 bg-white/70 border-black/10">
-          <DialogHeader>
-            <DialogTitle className="text-center text-lg">Share</DialogTitle>
-          </DialogHeader>
-          <div className="flex flex-col items-center gap-4 py-2">
+        <DialogContent className="max-w-[min(92vw,420px)] p-5 rounded-3xl backdrop-blur-xl border
+                         bg-[hsl(0_0%_100%/0.62)] border-[hsl(220_20%_20%/0.10)]
+                         dark:bg-[hsl(0_0%_100%/0.07)] dark:border-[hsl(0_0%_100%/0.10)]
+                         shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
+                         dark:shadow-none">
+          <div className="flex flex-col items-center gap-3">
             {/* QR Code */}
-            <div className="p-4 rounded-2xl bg-white">
+            <div className="p-3 rounded-2xl bg-white">
               <QRCodeSVG
                 value={SHARE_URL}
-                size={160}
+                size={148}
                 level="M"
                 bgColor="#ffffff"
                 fgColor="#000000"
@@ -79,24 +78,22 @@ export function ShareButton() {
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="w-full flex items-center justify-center gap-2 h-11 rounded-xl
-                             bg-primary text-primary-foreground font-medium text-sm
-                             hover:bg-primary/90 transition-colors duration-200
-                             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+                  className="cta-primary w-full"
                 >
-                  <Share2 className="w-4 h-4" />
-                  Share via…
+                  <span className="cta-content">
+                    <Share2 className="w-4 h-4" />
+                    Share via…
+                  </span>
                 </button>
               )}
               <button
                 onClick={handleCopyLink}
-                className="w-full flex items-center justify-center gap-2 h-11 rounded-xl
-                           border border-foreground/10 bg-foreground/5 text-foreground/80 font-medium text-sm
-                           hover:bg-foreground/10 transition-colors duration-200
-                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+                className="cta-secondary w-full"
               >
-                <Link className="w-4 h-4" />
-                Copy link
+                <span className="cta-content text-foreground/90 dark:text-white/90">
+                  <Link className="w-4 h-4" />
+                  Copy link
+                </span>
               </button>
             </div>
           </div>
