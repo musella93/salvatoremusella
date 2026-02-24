@@ -57,8 +57,8 @@ export function ShareButton() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-[min(92vw,420px)] p-5 rounded-3xl backdrop-blur-xl border
-                         bg-[hsl(0_0%_100%/0.62)] border-[hsl(220_20%_20%/0.10)]
-                         dark:bg-[hsl(0_0%_100%/0.07)] dark:border-[hsl(0_0%_100%/0.10)]
+                         bg-white/65 border-black/10
+                         dark:bg-white/[0.07] dark:border-white/10
                          shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
                          dark:shadow-none">
           <div className="flex flex-col items-center gap-3">
@@ -78,12 +78,13 @@ export function ShareButton() {
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="cta-primary w-full"
+                  className="w-full rounded-full min-h-[52px] flex items-center justify-center gap-2
+                             bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm
+                             border border-blue-500/30 transition-colors duration-200
+                             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
                 >
-                  <span className="cta-content">
-                    <Share2 className="w-4 h-4" />
-                    Share via…
-                  </span>
+                  <Share2 className="w-4 h-4" />
+                  Share via…
                 </button>
               )}
               <button
