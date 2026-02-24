@@ -4,6 +4,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { profile } from "@/data/profile";
 import { downloadVCard } from "@/utils/generateVCard";
 import { useTheme, ThemeToggle } from "@/components/ThemeToggle";
+import { ShareButton } from "@/components/ShareButton";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -55,7 +56,10 @@ const Index = () => {
           animate="animate"
           variants={staggerContainer}
         >
-          <ThemeToggle theme={theme} onToggle={toggle} />
+          <div className="absolute top-[24px] -right-[20px] z-50 flex flex-col gap-2">
+            <ThemeToggle theme={theme} onToggle={toggle} />
+            <ShareButton />
+          </div>
           {/* Hero Section */}
           <motion.header className="text-center space-y-4" variants={fadeInUp}>
             {/* Avatar */}
