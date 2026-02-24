@@ -56,7 +56,10 @@ export function ShareButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="relative overflow-hidden max-w-[min(92vw,380px)] p-4 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
+        <DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                         w-[min(92vw,420px)] max-h-[calc(100dvh-2rem)] overflow-y-auto
+                         pb-[max(1.25rem,env(safe-area-inset-bottom))]
+                         p-4 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
                          bg-white/65 border-black/10
                          dark:bg-white/[0.07] dark:border-white/10
                          shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
