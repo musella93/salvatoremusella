@@ -148,7 +148,7 @@ const Index = () => {
             variants={fadeInUp}
           >
             <p className="text-xs text-foreground/70 tracking-wide whitespace-nowrap">
-              Università Bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
+              Università bocconi <span className="text-foreground/40">·</span> Politecnico di Milano <span className="text-foreground/40">·</span> LUISS
             </p>
             <a
               href="https://go.salvatoremusella.com/PMP"
