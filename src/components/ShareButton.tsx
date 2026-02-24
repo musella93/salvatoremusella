@@ -57,18 +57,18 @@ export function ShareButton() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                         w-[min(88vw,340px)] max-h-[calc(100dvh-2rem)] overflow-y-auto
-                          pb-[max(1.5rem,env(safe-area-inset-bottom))]
-                          p-6 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
+                          w-[min(88vw,340px)] max-h-[calc(100dvh-2rem)] overflow-y-auto
+                          px-7 pt-7 pb-[max(1.75rem,env(safe-area-inset-bottom))]
+                          !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
                           bg-white/65 border-black/10
                           dark:bg-white/[0.07] dark:border-white/10
                           shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
-                          dark:shadow-none
+                          dark:shadow-[0_8px_40px_hsl(220_30%_10%/0.25)]
                           ring-1 ring-inset ring-white/20 dark:ring-white/[0.08]
                           before:absolute before:inset-0 before:rounded-3xl before:pointer-events-none before:z-[1]
                           before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.18)_0%,_transparent_70%)]
                           dark:before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.06)_0%,_transparent_70%)]">
-          <div className="flex flex-col items-center gap-5 w-full">
+          <div className="flex flex-col items-center gap-6 w-full">
             {/* QR Code */}
             <div className="w-full max-w-[280px] mx-auto flex justify-center">
               <div className="p-3 rounded-2xl bg-white">
