@@ -34,8 +34,7 @@ export function ThemeToggle({ theme, onToggle }: { theme: Theme; onToggle: () =>
     <button
       onClick={onToggle}
       aria-label="Toggle theme"
-      className="absolute top-[24px] -right-[20px] z-50
-                 w-11 h-11 flex items-center justify-center rounded-full
+      className="w-11 h-11 flex items-center justify-center rounded-full
                  backdrop-blur-xl border transition-all duration-200
                  overflow-hidden
                  shadow-[0_2px_12px_rgba(0,0,0,0.10),0_0_0_0.5px_rgba(255,255,255,0.06)]
