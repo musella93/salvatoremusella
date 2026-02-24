@@ -58,7 +58,7 @@ export function ShareButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-[340px] backdrop-blur-xl bg-background/95 border-foreground/10">
+        <DialogContent className="sm:max-w-[340px] backdrop-blur-xl border dark:bg-white/5 dark:border-white/10 bg-white/70 border-black/10">
           <DialogHeader>
             <DialogTitle className="text-center text-lg">Share</DialogTitle>
           </DialogHeader>
