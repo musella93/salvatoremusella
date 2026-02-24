@@ -28,7 +28,7 @@ export function ShareButton() {
   const handleCopyLink = async () => {
     try {
       await navigator.clipboard.writeText(SHARE_URL);
-      toast({ title: "Copied", description: "Link copied to clipboard" });
+      toast({ title: "Copied", description: "Link copied to clipboard", className: "backdrop-blur-xl border rounded-2xl shadow-none bg-[hsl(0_0%_100%/0.62)] border-[hsl(220_20%_20%/0.10)] text-foreground dark:bg-[hsl(0_0%_100%/0.07)] dark:border-[hsl(0_0%_100%/0.10)] dark:text-white" });
     } catch {
       toast({ title: "Error", description: "Could not copy link", variant: "destructive" });
     }
@@ -56,12 +56,12 @@ export function ShareButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-[min(92vw,420px)] p-5 rounded-3xl backdrop-blur-xl border
+        <DialogContent className="max-w-[min(92vw,380px)] p-4 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
                          bg-white/65 border-black/10
                          dark:bg-white/[0.07] dark:border-white/10
                          shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
                          dark:shadow-none">
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-2.5">
             {/* QR Code */}
             <div className="p-3 rounded-2xl bg-white">
               <QRCodeSVG
@@ -74,11 +74,11 @@ export function ShareButton() {
             </div>
 
             {/* Actions */}
-            <div className="w-full space-y-2">
+            <div className="w-full flex flex-col items-center gap-2">
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="w-full rounded-full min-h-[52px] flex items-center justify-center gap-2
+                  className="w-full max-w-[320px] mx-auto rounded-full h-11 flex items-center justify-center gap-2
                              bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm
                              border border-blue-500/30 transition-colors duration-200
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
@@ -89,7 +89,7 @@ export function ShareButton() {
               )}
               <button
                 onClick={handleCopyLink}
-                className="cta-secondary w-full"
+                className="cta-secondary w-full max-w-[320px] mx-auto !min-h-[44px]"
               >
                 <span className="cta-content text-foreground/90 dark:text-white/90">
                   <Link className="w-4 h-4" />
