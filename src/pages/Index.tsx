@@ -56,9 +56,11 @@ const Index = () => {
           animate="animate"
           variants={staggerContainer}
         >
-          <div className="absolute top-[24px] -right-[20px] z-50 flex flex-col gap-2">
+          <div className="absolute top-[24px] -right-[20px] z-50 flex flex-col gap-2 items-center">
             <ThemeToggle theme={theme} onToggle={toggle} />
-            <ShareButton />
+            <div className="mt-1">
+              <ShareButton />
+            </div>
           </div>
           {/* Hero Section */}
           <motion.header className="text-center space-y-4" variants={fadeInUp}>
