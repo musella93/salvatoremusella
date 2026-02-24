@@ -56,11 +56,15 @@ export function ShareButton() {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-[min(92vw,380px)] p-4 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
+        <DialogContent className="relative overflow-hidden max-w-[min(92vw,380px)] p-4 !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
                          bg-white/65 border-black/10
                          dark:bg-white/[0.07] dark:border-white/10
                          shadow-[0_8px_40px_hsl(220_30%_50%/0.08),0_1px_3px_hsl(220_30%_50%/0.04)]
-                         dark:shadow-none">
+                         dark:shadow-none
+                         ring-1 ring-inset ring-white/20 dark:ring-white/[0.08]
+                         before:absolute before:inset-0 before:rounded-3xl before:pointer-events-none before:z-[1]
+                         before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.18)_0%,_transparent_70%)]
+                         dark:before:bg-[radial-gradient(ellipse_60%_50%_at_15%_12%,_rgba(255,255,255,0.06)_0%,_transparent_70%)]">
           <div className="flex flex-col items-center gap-3">
             {/* QR Code */}
             <div className="p-3 rounded-2xl bg-white">
