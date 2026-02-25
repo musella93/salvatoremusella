@@ -92,8 +92,8 @@ export function ShareButton() {
                              border border-blue-500/30 transition-colors duration-200
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
                 >
-                  <Share2 className="w-4 h-4" />
-                  Share via…
+                   <Share2 className="w-4 h-4" />
+                   Share
                 </button>
               )}
               <button
