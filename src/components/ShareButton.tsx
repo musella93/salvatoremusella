@@ -87,8 +87,7 @@ export function ShareButton() {
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="cta-secondary w-full !min-h-[44px]"
-                  style={{ background: 'hsl(221 83% 53%)', borderColor: 'hsl(221 83% 53% / 0.3)' }}
+                  className="cta-share w-full !min-h-[44px]"
                 >
                   <span className="cta-content text-white">
                     <Share2 className="w-4 h-4" />
