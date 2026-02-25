@@ -1,5 +1,3 @@
-import avatarImg from "@/assets/avatar-optimized.webp";
-
 export const profile = {
   fullName: "Salvatore Musella",
   title: "Digital Product Manager",
@@ -9,7 +7,7 @@ export const profile = {
   whatsappLink: "https://wa.me/41799085728",
   email: "salvatore_musella@outlook.com",
   linkedinUrl: "https://www.linkedin.com/in/salvatoremusella",
-  photoUrl: avatarImg,
+  photoUrl: "/avatar-optimized.webp",
 } as const;
 
 export type Profile = typeof profile;
