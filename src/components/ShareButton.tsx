@@ -93,7 +93,7 @@ export function ShareButton() {
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
                 >
                   <Share2 className="w-4 h-4" />
-                  Share via…
+                  Share
                 </button>
               )}
               <button
