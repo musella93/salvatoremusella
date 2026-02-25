@@ -74,6 +74,9 @@ const Index = () => {
                     src={profile.photoUrl} 
                     alt={`${profile.fullName} - ${profile.title}`}
                     className="w-full h-full object-cover relative z-[2]"
+                    width={170}
+                    height={170}
+                    fetchPriority="high"
                     style={{ filter: 'none', opacity: 1, mixBlendMode: 'normal' }}
                   />
                 </motion.div>

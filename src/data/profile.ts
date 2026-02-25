@@ -1,4 +1,4 @@
-import avatarImg from "@/assets/avatar.jpg";
+import avatarImg from "@/assets/avatar-optimized.webp";
 
 export const profile = {
   fullName: "Salvatore Musella",
