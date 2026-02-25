@@ -113,7 +113,8 @@
     .glass-card,
     .cta-primary,
     .cta-secondary,
-    .cta-tertiary {
+    .cta-tertiary,
+    .cta-share {
       transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
     }
   }
@@ -399,7 +400,8 @@
      ══════════════════════════════════════════════ */
   .cta-primary,
   .cta-secondary,
-  .cta-tertiary {
+  .cta-tertiary,
+  .cta-share {
     @apply flex items-center justify-center w-full rounded-full 
            backdrop-blur-xl border
            transition-all duration-300 ease-out
@@ -415,7 +417,8 @@
   /* ── Dark CTA ── */
   .dark .cta-primary,
   .dark .cta-secondary,
-  .dark .cta-tertiary {
+  .dark .cta-tertiary,
+  .dark .cta-share {
     --tw-ring-color: hsl(0 0% 100% / 0.25);
   }
 
@@ -451,6 +454,21 @@
     background: hsl(0 0% 100% / 0.14);
   }
 
+  .dark .cta-share {
+    background: hsl(221 83% 53%);
+    border-color: hsl(221 83% 53% / 0.3);
+  }
+  .dark .cta-share span { color: hsl(0 0% 100%); }
+  .dark .cta-share:hover {
+    background: hsl(221 83% 46%);
+    border-color: hsl(221 83% 53% / 0.5);
+    transform: translateY(-1px);
+  }
+  .dark .cta-share:active {
+    transform: scale(0.99);
+    background: hsl(221 83% 42%);
+  }
+
   .dark .cta-tertiary {
     background: hsl(0 0% 100% / 0.04);
     border-color: hsl(0 0% 100% / 0.07);
@@ -470,7 +488,8 @@
   /* ── Light CTA ── */
   :root:not(.dark) .cta-primary,
   :root:not(.dark) .cta-secondary,
-  :root:not(.dark) .cta-tertiary {
+  :root:not(.dark) .cta-tertiary,
+  :root:not(.dark) .cta-share {
     --tw-ring-color: hsl(0 0% 0% / 0.15);
   }
 
@@ -504,6 +523,21 @@
   :root:not(.dark) .cta-secondary:active {
     transform: scale(0.99);
     background: hsl(0 0% 0% / 0.09);
+  }
+
+  :root:not(.dark) .cta-share {
+    background: hsl(221 83% 53%);
+    border-color: hsl(221 83% 53% / 0.3);
+  }
+  :root:not(.dark) .cta-share span { color: hsl(0 0% 100%); }
+  :root:not(.dark) .cta-share:hover {
+    background: hsl(221 83% 46%);
+    border-color: hsl(221 83% 53% / 0.5);
+    transform: translateY(-1px);
+  }
+  :root:not(.dark) .cta-share:active {
+    transform: scale(0.99);
+    background: hsl(221 83% 42%);
   }
 
   :root:not(.dark) .cta-tertiary {
