@@ -7,7 +7,7 @@ export const profile = {
   whatsappLink: "https://wa.me/41799085728",
   email: "salvatore_musella@outlook.com",
   linkedinUrl: "https://www.linkedin.com/in/salvatoremusella",
-  photoUrl: "/avatar.jpg",
+  photoUrl: "/avatar-optimized.webp",
 } as const;
 
 export type Profile = typeof profile;
