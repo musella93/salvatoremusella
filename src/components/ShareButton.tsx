@@ -87,15 +87,13 @@ export function ShareButton() {
               {supportsShare && (
                 <button
                   onClick={handleNativeShare}
-                  className="w-full rounded-full !min-h-[44px] flex items-center justify-center gap-2
-                             bg-blue-600 hover:bg-blue-700 text-white border border-blue-500/30
-                             transition-colors duration-200
+                  className="w-full rounded-full h-11 flex items-center justify-center gap-2
+                             bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm
+                             border border-blue-500/30 transition-colors duration-200
                              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
                 >
-                  <span className="cta-content">
-                    <Share2 className="w-4 h-4" />
-                    Share
-                  </span>
+                  <Share2 className="w-4 h-4" />
+                  Share via…
                 </button>
               )}
               <button
