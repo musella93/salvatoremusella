@@ -12,7 +12,7 @@ function getStoredTheme(): Theme | null {
 }
 
 export function useTheme() {
-  const [theme, setThemeState] = useState<Theme>(() => getStoredTheme() ?? "dark");
+  const [theme, setThemeState] = useState<Theme>(() => getStoredTheme() ?? "light");
 
   useEffect(() => {
     const root = document.documentElement;
