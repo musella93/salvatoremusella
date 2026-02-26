@@ -7,7 +7,8 @@ import {
   DialogContent,
 } from "@/components/ui/dialog";
 
-const SHARE_URL = "https://go.salvatoremusella.com/hello";
+const QR_URL = "https://go.salvatoremusella.com/from-screen-qr";
+const SHARE_URL = "https://go.salvatoremusella.com/from-share-button";
 
 export function ShareButton() {
   const [open, setOpen] = useState(false);
@@ -73,7 +74,7 @@ export function ShareButton() {
             <div className="w-full max-w-[280px] mx-auto flex justify-center">
               <div className="p-3 rounded-2xl bg-white">
                 <QRCodeSVG
-                  value={SHARE_URL}
+                  value={QR_URL}
                   size={148}
                   level="M"
                   bgColor="#ffffff"
