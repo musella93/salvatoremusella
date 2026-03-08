@@ -402,6 +402,7 @@
   .cta-primary,
   .cta-secondary,
   .cta-tertiary,
+  .cta-quaternary,
   .cta-share {
     @apply flex items-center justify-center w-full rounded-full 
            backdrop-blur-xl border
