@@ -413,7 +413,12 @@
   }
 
   .cta-content {
-    @apply flex items-center justify-center gap-2.5;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    gap: 0.625rem;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
   }
 
   /* ── Dark CTA ── */
