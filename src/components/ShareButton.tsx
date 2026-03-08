@@ -1,11 +1,14 @@
-import { useState, useRef, useEffect } from "react";
-import { Share2, Link, Check } from "lucide-react";
-import { QRCodeSVG } from "qrcode.react";
+import { useState, useRef, useEffect, lazy, Suspense } from "react";
+import { Share2, Link } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
+
+const QRCodeSVG = lazy(() =>
+  import("qrcode.react").then((m) => ({ default: m.QRCodeSVG }))
+);
 
 const QR_URL = "https://go.salvatoremusella.com/from-screen-qr";
 const SHARE_URL = "https://go.salvatoremusella.com/from-share-button";
@@ -121,13 +124,15 @@ export function ShareButton() {
             {/* QR Code */}
             <div className="w-full max-w-[280px] mx-auto flex justify-center">
               <div className="p-3 rounded-2xl bg-white">
-                <QRCodeSVG
-                  value={QR_URL}
-                  size={148}
-                  level="M"
-                  bgColor="#ffffff"
-                  fgColor="#000000"
-                />
+                <Suspense fallback={<div className="w-[148px] h-[148px]" />}>
+                  <QRCodeSVG
+                    value={QR_URL}
+                    size={148}
+                    level="M"
+                    bgColor="#ffffff"
+                    fgColor="#000000"
+                  />
+                </Suspense>
               </div>
             </div>
 
