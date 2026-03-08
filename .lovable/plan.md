@@ -1,17 +1,21 @@
 
 
-## Plan: Round Favicon
+## Plan: Add "View Selected Work" CTA
 
-I cannot programmatically crop a JPG image to a circle with transparency — that requires image processing tools I don't have access to.
+### Changes
 
-**Alternative approach**: Create an SVG favicon (`public/favicon.svg`) that uses a `<clipPath>` circle to display the existing `profile-hd.jpg` as a perfect circle with transparent corners. SVG favicons are supported by all modern browsers.
+**1. `src/index.css`** — Add `cta-quaternary` class
 
-### Steps
+- Add `cta-quaternary` to all grouped selectors where `cta-primary`, `cta-secondary`, `cta-tertiary` appear together (base styles line 401-411, transition line 114-117, dark ring line 418-423, light ring line 489-494)
+- Add dark mode `cta-quaternary` styles continuing the opacity curve: `bg 2% / border 4%`, text `78%` opacity, icon `55%` opacity
+- Add light mode `cta-quaternary` styles: `bg 2% / border 6%`, text `80%` opacity, icon `55%` opacity — intentionally slightly higher than a pure curve to ensure readability per the user's request
 
-1. **Create `public/favicon.svg`** — an SVG file (512×512 viewBox) that embeds the profile image inside a circular `<clipPath>`, producing a visually round favicon with transparent corners.
+**2. `src/pages/Index.tsx`** — Add new CTA and shift hierarchy
 
-2. **Update `index.html`** — change `<link rel="icon">` to point to `/favicon.svg` with `type="image/svg+xml"`, and keep `<link rel="apple-touch-icon">` pointing to `/profile-hd.jpg` (Apple icons are auto-masked to rounded squares by iOS).
+- Import `Briefcase` from lucide-react
+- Add new "View Selected Work" CTA as first button with `cta-primary` class, linking to `https://go.salvatoremusella.com/portfolio`
+- Shift existing buttons: Resume → `cta-secondary`, Chat → `cta-tertiary`, Credentials → `cta-quaternary`
+- Reduce nav `space-y-2.5` → `space-y-2` to keep proportions tight with 4 buttons
 
-### Limitation
-The SVG will reference the image via a relative path. This works perfectly as a browser favicon. If you need an actual `.png` file with circular crop (e.g. for other platforms), that would need to be created in an external image editor like Figma or Canva.
+No other files change. Zero visual/layout redesign.
 
