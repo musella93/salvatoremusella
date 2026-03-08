@@ -149,8 +149,7 @@ export function ShareButton() {
                 className="cta-secondary w-full !min-h-[44px]"
               >
                 <span className="cta-content text-foreground/90 dark:text-white/90">
-                  {copied ? <Check className="w-4 h-4" /> : <Link className="w-4 h-4" />}
-                  {copied ? "Copied ✓" : "Copy link"}
+                  {copied ? "Copied ✓" : <><Link className="w-4 h-4" />Copy link</>}
                 </span>
               </button>
             </div>
