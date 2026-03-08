@@ -73,6 +73,10 @@ const Index = () => {
                   <img 
                     src={profile.photoUrl} 
                     alt={`${profile.fullName} - ${profile.title}`}
+                    width={170}
+                    height={170}
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover relative z-[2]"
                     style={{ filter: 'none', opacity: 1, mixBlendMode: 'normal' }}
                   />
