@@ -73,7 +73,7 @@ export function ShareButton() {
     if (success) {
       setCopied(true);
       if (copiedTimeout.current) clearTimeout(copiedTimeout.current);
-      copiedTimeout.current = setTimeout(() => setCopied(false), 1200);
+      copiedTimeout.current = setTimeout(() => setCopied(false), 1500);
     } else {
       toast({
         title: "Could not copy link",
