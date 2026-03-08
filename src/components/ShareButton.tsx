@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Share2, Link } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Share2, Link, Check } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -12,8 +12,16 @@ const SHARE_URL = "https://go.salvatoremusella.com/from-share-button";
 
 export function ShareButton() {
   const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const copiedTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { toast } = useToast();
   const supportsShare = typeof navigator !== "undefined" && !!navigator.share;
+
+  useEffect(() => {
+    return () => {
+      if (copiedTimeout.current) clearTimeout(copiedTimeout.current);
+    };
+  }, []);
 
   const handleNativeShare = async () => {
     try {
@@ -21,17 +29,57 @@ export function ShareButton() {
         title: "Salvatore Musella - Digital Product Manager",
         url: SHARE_URL,
       });
-    } catch (e) {
-      // user cancelled or error
+    } catch (e: unknown) {
+      if ((e as Record<string, unknown>)?.name === "AbortError") return;
+      toast({
+        title: "Couldn't open share options",
+        description: "Please use Copy link instead.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const fallbackCopy = (text: string): boolean => {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    try {
+      textarea.select();
+      return document.execCommand("copy") === true;
+    } catch {
+      return false;
+    } finally {
+      document.body.removeChild(textarea);
     }
   };
 
   const handleCopyLink = async () => {
+    let success = false;
     try {
-      await navigator.clipboard.writeText(SHARE_URL);
-      toast({ title: "Copied", description: "Link copied to clipboard", className: "backdrop-blur-xl border rounded-2xl shadow-none bg-[hsl(0_0%_100%/0.62)] border-[hsl(220_20%_20%/0.10)] text-foreground dark:bg-[hsl(0_0%_100%/0.07)] dark:border-[hsl(0_0%_100%/0.10)] dark:text-white" });
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(SHARE_URL);
+        success = true;
+      } else {
+        success = fallbackCopy(SHARE_URL);
+      }
     } catch {
-      toast({ title: "Error", description: "Could not copy link", variant: "destructive" });
+      success = fallbackCopy(SHARE_URL);
+    }
+
+    if (success) {
+      setCopied(true);
+      if (copiedTimeout.current) clearTimeout(copiedTimeout.current);
+      copiedTimeout.current = setTimeout(() => setCopied(false), 800);
+    } else {
+      toast({
+        title: "Could not copy link",
+        description: "Please copy the URL manually.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -101,8 +149,8 @@ export function ShareButton() {
                 className="cta-secondary w-full !min-h-[44px]"
               >
                 <span className="cta-content text-foreground/90 dark:text-white/90">
-                  <Link className="w-4 h-4" />
-                  Copy link
+                  {copied ? <Check className="w-4 h-4" /> : <Link className="w-4 h-4" />}
+                  {copied ? "Copied ✓" : "Copy link"}
                 </span>
               </button>
             </div>
