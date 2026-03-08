@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, UserPlus } from "lucide-react";
+import { Briefcase, FileDown, CalendarClock, Award, Linkedin, Mail, MapPin, UserPlus } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { profile } from "@/data/profile";
 import { downloadVCard } from "@/utils/generateVCard";
