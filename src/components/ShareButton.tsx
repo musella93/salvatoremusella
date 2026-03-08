@@ -106,7 +106,7 @@ export function ShareButton() {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-                          w-[min(88vw,340px)] max-h-[calc(100dvh-2rem)] overflow-y-auto
+                          w-[clamp(280px,80vw,320px)] max-h-[calc(100dvh-2rem)] overflow-y-auto
                           px-7 pt-7 pb-[max(1.75rem,env(safe-area-inset-bottom))]
                           !rounded-3xl sm:!rounded-3xl backdrop-blur-xl border
                           bg-white/65 border-black/10
