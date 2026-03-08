@@ -420,6 +420,7 @@
   .dark .cta-primary,
   .dark .cta-secondary,
   .dark .cta-tertiary,
+  .dark .cta-quaternary,
   .dark .cta-share {
     --tw-ring-color: hsl(0 0% 100% / 0.25);
   }
