@@ -488,10 +488,27 @@
     background: hsl(0 0% 100% / 0.09);
   }
 
+  .dark .cta-quaternary {
+    background: hsl(0 0% 100% / 0.02);
+    border-color: hsl(0 0% 100% / 0.04);
+  }
+  .dark .cta-quaternary span { color: hsl(0 0% 100% / 0.78); }
+  .dark .cta-quaternary .cta-icon { color: hsl(0 0% 100% / 0.55); }
+  .dark .cta-quaternary:hover {
+    background: hsl(0 0% 100% / 0.05);
+    border-color: hsl(0 0% 100% / 0.08);
+    transform: translateY(-1px);
+  }
+  .dark .cta-quaternary:active {
+    transform: scale(0.99);
+    background: hsl(0 0% 100% / 0.07);
+  }
+
   /* ── Light CTA ── */
   :root:not(.dark) .cta-primary,
   :root:not(.dark) .cta-secondary,
   :root:not(.dark) .cta-tertiary,
+  :root:not(.dark) .cta-quaternary,
   :root:not(.dark) .cta-share {
     --tw-ring-color: hsl(0 0% 0% / 0.15);
   }
