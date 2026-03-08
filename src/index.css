@@ -417,7 +417,7 @@
     grid-template-columns: 1rem 1fr;
     gap: 0.625rem;
     align-items: center;
-    width: fit-content;
+    width: 13rem;
     margin: 0 auto;
   }
 
