@@ -1,17 +1,33 @@
 
 
-## Plan: Round Favicon
+## Plan: CTA Stack Refinements
 
-I cannot programmatically crop a JPG image to a circle with transparency — that requires image processing tools I don't have access to.
+### 1. Micro-accent on primary CTA
 
-**Alternative approach**: Create an SVG favicon (`public/favicon.svg`) that uses a `<clipPath>` circle to display the existing `profile-hd.jpg` as a perfect circle with transparent corners. SVG favicons are supported by all modern browsers.
+Add a faint `box-shadow` to `.cta-primary` only — a 1px outer ring glow:
+- **Dark**: `box-shadow: 0 0 0 1px hsl(0 0% 100% / 0.06)`; bump bg from `0.16` → `0.18`
+- **Light**: `box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.04)`; bump bg from `0.08` → `0.10`
 
-### Steps
+Hover/active states adjusted proportionally (+0.02 each).
 
-1. **Create `public/favicon.svg`** — an SVG file (512×512 viewBox) that embeds the profile image inside a circular `<clipPath>`, producing a visually round favicon with transparent corners.
+### 2. Fixed icon column via grid
 
-2. **Update `index.html`** — change `<link rel="icon">` to point to `/favicon.svg` with `type="image/svg+xml"`, and keep `<link rel="apple-touch-icon">` pointing to `/profile-hd.jpg` (Apple icons are auto-masked to rounded squares by iOS).
+Replace `.cta-content` (line 415-417):
 
-### Limitation
-The SVG will reference the image via a relative path. This works perfectly as a browser favicon. If you need an actual `.png` file with circular crop (e.g. for other platforms), that would need to be created in an external image editor like Figma or Canva.
+```css
+.cta-content {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: 0.625rem;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+```
+
+All icons are `w-4 h-4` (= 1rem), so 1rem column is a perfect fit. Labels all start at the same X position. `width: fit-content` + `margin: 0 auto` keeps the block centered.
+
+### File changed
+
+**`src/index.css`** only — no other files.
 
