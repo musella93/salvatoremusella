@@ -1,17 +1,33 @@
 
 
-## Plan: Round Favicon
+## Plan: Harden Share Modal CTA Logic
 
-I cannot programmatically crop a JPG image to a circle with transparency — that requires image processing tools I don't have access to.
+**File:** `src/components/ShareButton.tsx` (only file modified)
 
-**Alternative approach**: Create an SVG favicon (`public/favicon.svg`) that uses a `<clipPath>` circle to display the existing `profile-hd.jpg` as a perfect circle with transparent corners. SVG favicons are supported by all modern browsers.
+### 1. Copy link — robust fallback chain
 
-### Steps
+Replace `handleCopyLink` with:
 
-1. **Create `public/favicon.svg`** — an SVG file (512×512 viewBox) that embeds the profile image inside a circular `<clipPath>`, producing a visually round favicon with transparent corners.
+1. Try `navigator.clipboard.writeText(SHARE_URL)` if available
+2. Fallback: create hidden `<textarea>`, select, run `document.execCommand("copy")` — treat `=== false` as failure, remove element in `finally`
+3. If both fail → error toast: "Could not copy link" / "Please copy the URL manually."
 
-2. **Update `index.html`** — change `<link rel="icon">` to point to `/favicon.svg` with `type="image/svg+xml"`, and keep `<link rel="apple-touch-icon">` pointing to `/profile-hd.jpg` (Apple icons are auto-masked to rounded squares by iOS).
+### 2. Copy success — inline feedback as primary confirmation
 
-### Limitation
-The SVG will reference the image via a relative path. This works perfectly as a browser favicon. If you need an actual `.png` file with circular crop (e.g. for other platforms), that would need to be created in an external image editor like Figma or Canva.
+- Add `copied` state (`useState(false)`) + `useRef` for timeout cleanup via `useEffect`
+- On success: set `copied = true`, reset after 800ms
+- Button label swaps: `"Copy link"` → `"Copied ✓"`
+- Remove the existing success toast (keep only error toast)
+
+### 3. Share — distinguish cancel vs real error (safe check)
+
+Update `handleNativeShare` catch block with optional chaining:
+- `e?.name === "AbortError"` → silent, do nothing (handles non-standard error objects safely)
+- Any other error → toast: title "Couldn't open share options", description "Please use Copy link instead."
+
+### 4. No changes to
+
+- Share button visibility logic (hidden when `navigator.share` unsupported)
+- Classes, dimensions, QR, modal layout, dark/light styling, floating button
+- SEO, metadata, structured data
 
