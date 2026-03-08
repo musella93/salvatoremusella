@@ -113,7 +113,7 @@ const Index = () => {
             >
               <span className="cta-content">
                 <Briefcase className="cta-icon w-4 h-4 flex-shrink-0" />
-                <span className="font-medium">View Selected Work</span>
+                <span className="font-medium">View Featured Projects</span>
               </span>
             </a>
 
