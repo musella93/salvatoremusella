@@ -114,6 +114,7 @@
     .cta-primary,
     .cta-secondary,
     .cta-tertiary,
+    .cta-quaternary,
     .cta-share {
       transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
     }
@@ -401,6 +402,7 @@
   .cta-primary,
   .cta-secondary,
   .cta-tertiary,
+  .cta-quaternary,
   .cta-share {
     @apply flex items-center justify-center w-full rounded-full 
            backdrop-blur-xl border
@@ -418,6 +420,7 @@
   .dark .cta-primary,
   .dark .cta-secondary,
   .dark .cta-tertiary,
+  .dark .cta-quaternary,
   .dark .cta-share {
     --tw-ring-color: hsl(0 0% 100% / 0.25);
   }
@@ -485,10 +488,27 @@
     background: hsl(0 0% 100% / 0.09);
   }
 
+  .dark .cta-quaternary {
+    background: hsl(0 0% 100% / 0.02);
+    border-color: hsl(0 0% 100% / 0.04);
+  }
+  .dark .cta-quaternary span { color: hsl(0 0% 100% / 0.78); }
+  .dark .cta-quaternary .cta-icon { color: hsl(0 0% 100% / 0.55); }
+  .dark .cta-quaternary:hover {
+    background: hsl(0 0% 100% / 0.05);
+    border-color: hsl(0 0% 100% / 0.08);
+    transform: translateY(-1px);
+  }
+  .dark .cta-quaternary:active {
+    transform: scale(0.99);
+    background: hsl(0 0% 100% / 0.07);
+  }
+
   /* ── Light CTA ── */
   :root:not(.dark) .cta-primary,
   :root:not(.dark) .cta-secondary,
   :root:not(.dark) .cta-tertiary,
+  :root:not(.dark) .cta-quaternary,
   :root:not(.dark) .cta-share {
     --tw-ring-color: hsl(0 0% 0% / 0.15);
   }
@@ -554,6 +574,22 @@
   :root:not(.dark) .cta-tertiary:active {
     transform: scale(0.99);
     background: hsl(0 0% 0% / 0.07);
+  }
+
+  :root:not(.dark) .cta-quaternary {
+    background: hsl(0 0% 0% / 0.02);
+    border-color: hsl(0 0% 0% / 0.06);
+  }
+  :root:not(.dark) .cta-quaternary span { color: hsl(222 47% 11% / 0.80); }
+  :root:not(.dark) .cta-quaternary .cta-icon { color: hsl(222 47% 11% / 0.55); }
+  :root:not(.dark) .cta-quaternary:hover {
+    background: hsl(0 0% 0% / 0.04);
+    border-color: hsl(0 0% 0% / 0.10);
+    transform: translateY(-1px);
+  }
+  :root:not(.dark) .cta-quaternary:active {
+    transform: scale(0.99);
+    background: hsl(0 0% 0% / 0.06);
   }
 
   /* ══════════════════════════════════════════════
