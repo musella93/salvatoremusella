@@ -114,6 +114,7 @@
     .cta-primary,
     .cta-secondary,
     .cta-tertiary,
+    .cta-quaternary,
     .cta-share {
       transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
     }
