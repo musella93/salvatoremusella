@@ -520,19 +520,20 @@
   }
 
   :root:not(.dark) .cta-primary {
-    background: hsl(0 0% 0% / 0.08);
+    background: hsl(0 0% 0% / 0.10);
     border-color: hsl(0 0% 0% / 0.14);
+    box-shadow: 0 0 0 1px hsl(0 0% 0% / 0.04);
   }
   :root:not(.dark) .cta-primary span { color: hsl(222 47% 11%); }
   :root:not(.dark) .cta-primary .cta-icon { color: hsl(222 47% 11% / 0.80); }
   :root:not(.dark) .cta-primary:hover {
-    background: hsl(0 0% 0% / 0.10);
+    background: hsl(0 0% 0% / 0.12);
     border-color: hsl(0 0% 0% / 0.18);
     transform: translateY(-1px);
   }
   :root:not(.dark) .cta-primary:active {
     transform: scale(0.99);
-    background: hsl(0 0% 0% / 0.12);
+    background: hsl(0 0% 0% / 0.14);
   }
 
   :root:not(.dark) .cta-secondary {
