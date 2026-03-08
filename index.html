@@ -124,7 +124,24 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static HTML shell for SEO crawlers — replaced by React on mount -->
+      <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem;font-family:Inter,system-ui,-apple-system,sans-serif">
+        <div style="max-width:440px;width:100%;text-align:center">
+          <h1 style="font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;line-height:1.2;margin:0 0 0.5rem">Salvatore Musella</h1>
+          <p style="font-size:1.125rem;font-weight:500;margin:0 0 0.25rem">Digital Product Manager</p>
+          <p style="font-size:0.75rem;margin:0 0 1.5rem;opacity:0.6">Lugano, Switzerland</p>
+          <nav aria-label="Primary actions" style="display:flex;flex-direction:column;gap:0.625rem;max-width:360px;margin:0 auto 1.5rem">
+            <a href="https://go.salvatoremusella.com/cv" target="_blank" rel="noopener noreferrer" style="display:block;padding:0.75rem 1rem;font-weight:500;text-decoration:none;border-radius:0.75rem;text-align:center">Download Resume</a>
+            <a href="https://go.salvatoremusella.com/quick-chat" target="_blank" rel="noopener noreferrer" style="display:block;padding:0.75rem 1rem;font-weight:500;text-decoration:none;border-radius:0.75rem;text-align:center">Book a Quick Chat</a>
+            <a href="https://go.salvatoremusella.com/credly" target="_blank" rel="noopener noreferrer" style="display:block;padding:0.75rem 1rem;font-weight:500;text-decoration:none;border-radius:0.75rem;text-align:center">View Credentials</a>
+          </nav>
+          <p style="font-size:0.75rem;opacity:0.7;margin:0 0 0.25rem">Università Bocconi · Politecnico di Milano · LUISS</p>
+          <p style="font-size:0.6875rem;opacity:0.5;margin:0 0 1rem">PMP® Certified Project Manager</p>
+          <footer style="font-size:0.6875rem;opacity:0.3">© 2025 Salvatore Musella</footer>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
