@@ -576,6 +576,22 @@
     background: hsl(0 0% 0% / 0.07);
   }
 
+  :root:not(.dark) .cta-quaternary {
+    background: hsl(0 0% 0% / 0.02);
+    border-color: hsl(0 0% 0% / 0.06);
+  }
+  :root:not(.dark) .cta-quaternary span { color: hsl(222 47% 11% / 0.80); }
+  :root:not(.dark) .cta-quaternary .cta-icon { color: hsl(222 47% 11% / 0.55); }
+  :root:not(.dark) .cta-quaternary:hover {
+    background: hsl(0 0% 0% / 0.04);
+    border-color: hsl(0 0% 0% / 0.10);
+    transform: translateY(-1px);
+  }
+  :root:not(.dark) .cta-quaternary:active {
+    transform: scale(0.99);
+    background: hsl(0 0% 0% / 0.06);
+  }
+
   /* ══════════════════════════════════════════════
      Badge & avatar glow
      ══════════════════════════════════════════════ */

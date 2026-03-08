@@ -102,13 +102,27 @@ const Index = () => {
           </motion.header>
 
           {/* Action Stack - CTA Buttons */}
-          <motion.nav className="w-full max-w-[360px] mx-auto space-y-2.5" variants={fadeInUp} aria-label="Primary actions">
-            {/* Primary CTA - Resume */}
+          <motion.nav className="w-full max-w-[360px] mx-auto space-y-2" variants={fadeInUp} aria-label="Primary actions">
+            {/* Primary CTA - Portfolio */}
+            <a
+              href="https://go.salvatoremusella.com/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-primary"
+              data-cta="portfolio"
+            >
+              <span className="cta-content">
+                <Briefcase className="cta-icon w-4 h-4 flex-shrink-0" />
+                <span className="font-medium">View Selected Work</span>
+              </span>
+            </a>
+
+            {/* Secondary CTA - Resume */}
             <a
               href="https://go.salvatoremusella.com/cv"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-primary"
+              className="cta-secondary"
               data-cta="resume"
             >
               <span className="cta-content">
@@ -117,12 +131,12 @@ const Index = () => {
               </span>
             </a>
 
-            {/* Secondary CTA - Quick Chat */}
+            {/* Tertiary CTA - Quick Chat */}
             <a
               href="https://go.salvatoremusella.com/quick-chat"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-secondary"
+              className="cta-tertiary"
               data-cta="booking"
             >
               <span className="cta-content">
@@ -131,12 +145,12 @@ const Index = () => {
               </span>
             </a>
 
-            {/* Tertiary CTA - Credly */}
+            {/* Quaternary CTA - Credly */}
             <a
               href="https://go.salvatoremusella.com/credly"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta-tertiary"
+              className="cta-quaternary"
               data-cta="credly"
             >
               <span className="cta-content">
