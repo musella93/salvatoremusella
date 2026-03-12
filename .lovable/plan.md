@@ -1,17 +1,26 @@
 
 
-## Plan: Round Favicon
+## Plan: Card Vertical Balance Refinement
 
-I cannot programmatically crop a JPG image to a circle with transparency — that requires image processing tools I don't have access to.
+### Change
+Reduce the top padding inside the card by one additional step to raise the content block slightly.
 
-**Alternative approach**: Create an SVG favicon (`public/favicon.svg`) that uses a `<clipPath>` circle to display the existing `profile-hd.jpg` as a perfect circle with transparent corners. SVG favicons are supported by all modern browsers.
+**Current (line 54):**
+```tsx
+className="relative w-full max-w-[440px] liquid-glass-card px-8 pt-5 pb-5 md:px-10 md:pt-7 md:pb-6 space-y-5"
+```
 
-### Steps
+**After:**
+```tsx
+className="relative w-full max-w-[440px] liquid-glass-card px-8 pt-4 pb-5 md:px-10 md:pt-6 md:pb-6 space-y-5"
+```
 
-1. **Create `public/favicon.svg`** — an SVG file (512×512 viewBox) that embeds the profile image inside a circular `<clipPath>`, producing a visually round favicon with transparent corners.
+### Preserved
+- Footer text: `© 2026 · Designed & developed by Salvatore Musella`
+- Social icons to footer spacing: `gap-3` on line 183
+- All colors, typography, button sizes, and styling remain unchanged
+- Responsive behavior maintained
 
-2. **Update `index.html`** — change `<link rel="icon">` to point to `/favicon.svg` with `type="image/svg+xml"`, and keep `<link rel="apple-touch-icon">` pointing to `/profile-hd.jpg` (Apple icons are auto-masked to rounded squares by iOS).
-
-### Limitation
-The SVG will reference the image via a relative path. This works perfectly as a browser favicon. If you need an actual `.png` file with circular crop (e.g. for other platforms), that would need to be created in an external image editor like Figma or Canva.
+### File changed
+- `src/pages/Index.tsx` only
 
