@@ -51,7 +51,7 @@ const Index = () => {
 
       <main className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         <motion.div
-          className="relative w-full max-w-[440px] liquid-glass-card px-8 pt-5 pb-5 md:px-10 md:pt-7 md:pb-6 space-y-5"
+          className="relative w-full max-w-[440px] liquid-glass-card px-8 pt-4 pb-5 md:px-10 md:pt-6 md:pb-6 space-y-5"
           initial="initial"
           animate="animate"
           variants={staggerContainer}
