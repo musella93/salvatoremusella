@@ -180,7 +180,7 @@ const Index = () => {
 
           {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-2 -mt-1"
+            className="flex flex-col items-center gap-3 -mt-1"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
