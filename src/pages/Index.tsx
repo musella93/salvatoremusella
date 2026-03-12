@@ -255,7 +255,7 @@ const Index = () => {
               </div>
             </TooltipProvider>
             <p className="text-[11px] text-foreground/30 tracking-wide">
-              © {new Date().getFullYear()} {profile.fullName}
+              © 2026 · Designed & developed by Salvatore Musella
             </p>
           </motion.footer>
         </motion.div>
