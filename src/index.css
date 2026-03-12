@@ -413,10 +413,10 @@
   }
 
   .cta-content {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.625rem;
-    margin: 0 auto;
   }
 
   /* ── Dark CTA ── */
