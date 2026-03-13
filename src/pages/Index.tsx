@@ -118,8 +118,6 @@ const Index = () => {
             {/* Secondary CTA - Resume */}
             <a
               href="https://go.salvatoremusella.com/cv"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-secondary"
               data-cta="resume"
             >
