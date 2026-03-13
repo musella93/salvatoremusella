@@ -254,9 +254,9 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <div className="text-[11px] text-foreground/30 tracking-wide text-center leading-relaxed max-w-[200px]">
-              <p className="whitespace-nowrap">© 2026 · All rights reserved.</p>
-              <p className="whitespace-nowrap">Designed and developed by Salvatore Musella</p>
+            <div className="text-[11px] text-foreground/30 tracking-wide text-center leading-relaxed">
+              <p className="whitespace-nowrap text-center">© 2026 · All rights reserved.</p>
+              <p className="whitespace-nowrap text-center">Designed and developed by Salvatore Musella</p>
             </div>
           </motion.footer>
         </motion.div>
