@@ -106,8 +106,6 @@ const Index = () => {
             {/* Primary CTA - Portfolio */}
             <a
               href="https://go.salvatoremusella.com/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-primary"
               data-cta="portfolio"
             >
