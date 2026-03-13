@@ -172,7 +172,7 @@ const Index = () => {
               href="https://go.salvatoremusella.com/PMP"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[11px] text-foreground/50 hover:text-foreground/70 transition-colors duration-300"
+              className="inline-block text-[11px] text-foreground/60 hover:text-foreground/80 transition-colors duration-300 tracking-wide"
             >
               PMP® Certified Project Manager
             </a>
