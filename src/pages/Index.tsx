@@ -142,8 +142,6 @@ const Index = () => {
             {/* Quaternary CTA - Quick Chat */}
             <a
               href="https://go.salvatoremusella.com/quick-chat"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-quaternary"
               data-cta="booking"
             >
