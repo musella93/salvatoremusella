@@ -106,8 +106,6 @@ const Index = () => {
             {/* Primary CTA - Portfolio */}
             <a
               href="https://go.salvatoremusella.com/portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-primary"
               data-cta="portfolio"
             >
@@ -120,8 +118,6 @@ const Index = () => {
             {/* Secondary CTA - Resume */}
             <a
               href="https://go.salvatoremusella.com/cv"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-secondary"
               data-cta="resume"
             >
@@ -134,8 +130,6 @@ const Index = () => {
             {/* Tertiary CTA - Credly */}
             <a
               href="https://go.salvatoremusella.com/credly"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-tertiary"
               data-cta="credly"
             >
@@ -148,8 +142,6 @@ const Index = () => {
             {/* Quaternary CTA - Quick Chat */}
             <a
               href="https://go.salvatoremusella.com/quick-chat"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-quaternary"
               data-cta="booking"
             >
@@ -170,8 +162,6 @@ const Index = () => {
             </p>
             <a
               href="https://go.salvatoremusella.com/PMP"
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-block text-[11px] text-foreground/60 hover:text-foreground/80 transition-colors duration-300 tracking-wide"
             >
               PMP® Certified Project Manager
