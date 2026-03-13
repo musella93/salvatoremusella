@@ -180,7 +180,7 @@ const Index = () => {
 
           {/* Micro Footer */}
           <motion.footer
-            className="flex flex-col items-center gap-3 -mt-1"
+            className="flex flex-col items-center gap-5 -mt-1"
             variants={fadeInUp}
           >
             <TooltipProvider delayDuration={300}>
@@ -254,7 +254,7 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <div className="text-[10px] text-foreground/30 tracking-wide text-center leading-relaxed">
+            <div className="text-[10px] text-foreground/30 tracking-wide text-center leading-none">
               <p className="whitespace-nowrap text-center">© 2026 · All rights reserved.</p>
               <p className="whitespace-nowrap text-center">Designed and developed by Salvatore Musella</p>
             </div>
