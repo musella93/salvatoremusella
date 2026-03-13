@@ -254,10 +254,10 @@ const Index = () => {
                 </Tooltip>
               </div>
             </TooltipProvider>
-            <p className="text-[11px] text-foreground/30 tracking-wide text-center leading-relaxed max-w-[200px]">
-              © 2026 · All rights reserved.<br />
-              Designed and developed by Salvatore Musella
-            </p>
+            <div className="text-[11px] text-foreground/30 tracking-wide text-center leading-relaxed max-w-[200px]">
+              <p className="whitespace-nowrap">© 2026 · All rights reserved.</p>
+              <p className="whitespace-nowrap">Designed and developed by Salvatore Musella</p>
+            </div>
           </motion.footer>
         </motion.div>
       </main>
