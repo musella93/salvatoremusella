@@ -130,8 +130,6 @@ const Index = () => {
             {/* Tertiary CTA - Credly */}
             <a
               href="https://go.salvatoremusella.com/credly"
-              target="_blank"
-              rel="noopener noreferrer"
               className="cta-tertiary"
               data-cta="credly"
             >
